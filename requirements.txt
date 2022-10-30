@@ -1,3 +1,7 @@
-flask_bootstrap
-flask
-ryanair
+Bootstrap_Flask==2.1.0
+Flask==2.2.2
+flask_bootstrap==3.3.7.1
+MarkupSafe==2.1.1
+ryanair==1.1
+ryanair_py==1.0.2
+WTForms==3.0.1
