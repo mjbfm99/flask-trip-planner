@@ -60,4 +60,4 @@ jobs:
         with:
           app-name: 'trip-planner-test'
           slot-name: 'Production'
-          publish-profile: ${{ secrets.AZUREAPPSERVICE_PUBLISHPROFILE_67465FBF31444F3DAB7C93B53112E44A }}
+          publish-profile: ${{ secrets.AZUREAPPSERVICE_PUBLISHPROFILE_76E123DC1628435EAAF5F972C37F9C5B }}
