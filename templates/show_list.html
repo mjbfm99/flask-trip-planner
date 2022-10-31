@@ -1,30 +1,35 @@
 <head>
 	<title>Flight search</title>
-	    <meta charset="utf-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1">
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
 	{{ bootstrap.load_css() }}
+	<link rel="stylesheet" href="{{ url_for('static', filename= 'fonts.css') }}">
 </head>
 <body>
 <nav class="navbar navbar-light bg-light px-4">
 	<a class="navbar-brand" href="{{ url_for('hello') }}"><u>Go back</u></a>
 </nav>
 <table class="table table-striped">
-<thead><tr>
-	 <th scope="col">Destination</th>
-	 <th scope="col">Departure time</th>
-	 <th scope="col">Return time</th>
-	 <th scope="col">Price</th>
-	 <th scope="col">Airline</th>
-</tr></thead><tbody>
-{% for item in data %}
-<tr>
-	<td>{{ item.outbound.destination }} - {{ item.outbound.destinationFull }}</td>
-	<td>{{ item.outbound.departureTime.strftime("%a %b %d %H:%M") }}</td>
-	<td>{{ item.inbound.departureTime.strftime("%a %b %d %H:%M") }}</td>
-	<td>€{{ item.totalPrice|round(2) }}</td>
-	<td>Ryanair</td>
-</tr>
-{% endfor %}
-</tbody></table>
+	<thead>
+	<tr>
+		<th scope="col">Destination</th>
+		<th scope="col">Departure time</th>
+		<th scope="col">Return time</th>
+		<th scope="col">Price</th>
+		<th scope="col">Airline</th>
+	</tr>
+	</thead>
+	<tbody>
+	{% for item in data %}
+	<tr>
+		<td>{{ item.outbound.destination }} - {{ item.outbound.destinationFull }}</td>
+		<td>{{ item.outbound.departureTime.strftime("%a %b %d %H:%M") }}</td>
+		<td>{{ item.inbound.departureTime.strftime("%a %b %d %H:%M") }}</td>
+		<td>€{{ '%0.2f' % item.totalPrice|round(2) }}</td>
+		<td>Ryanair</td>
+	</tr>
+	{% endfor %}
+	</tbody>
+</table>
 {{ bootstrap.load_js() }}
 </body>

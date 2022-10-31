@@ -4,7 +4,7 @@ from forms import AirportForm
 from ryanair import Ryanair
 from flask_bootstrap import Bootstrap5
 
-app = Flask(__name__)
+app = Flask(__name__,template_folder='./templates',static_folder='./static')
 ryanair = Ryanair("EUR")
 Bootstrap5(app)
 
