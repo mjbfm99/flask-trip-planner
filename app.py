@@ -40,16 +40,19 @@ def result(airport, d00, d01, d10, d11):
     response = json.loads(requests.get(url, headers = headers, params = params).text)
 
     results = []
+    airports = []
     for r in response['data']:
-        results.append({"airport": r['flyTo'],
-                        "city": r['cityTo'],
-                        "firstDepartureTime": datetime.datetime.strptime(r['route'][0]['local_departure'],
-                                                                            "%Y-%m-%dT%H:%M:%S.%fZ"),
-                        "lastArrivalTime": datetime.datetime.strptime(r['route'][-1]['local_arrival'],
-                                                                            "%Y-%m-%dT%H:%M:%S.%fZ"),
-                        "price": round(r['price'], 2),
-                        "airlines": r['airlines'],
-                        "link": r['deep_link']},)
+        if r['flyTo'] in airports:
+            airports.append(r['flyTo'])
+            results.append({"airport": r['flyTo'],
+                            "city": r['cityTo'],
+                            "firstDepartureTime": datetime.datetime.strptime(r['route'][0]['local_departure'],
+                                                                                "%Y-%m-%dT%H:%M:%S.%fZ"),
+                            "lastArrivalTime": datetime.datetime.strptime(r['route'][-1]['local_arrival'],
+                                                                                "%Y-%m-%dT%H:%M:%S.%fZ"),
+                            "price": round(r['price'], 2),
+                            "airlines": r['airlines'],
+                            "link": r['deep_link']},)
 
     return render_template("show_list.html", data=results)
 
