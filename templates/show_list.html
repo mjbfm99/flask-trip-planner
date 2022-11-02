@@ -16,19 +16,19 @@
 		<th scope="col">Departure time</th>
 		<th scope="col">Return time</th>
 		<th scope="col">Price</th>
-		<th scope="col">Airline</th>
-		<th scope="col">Book</th>
+		<th scope="col">Airlines</th>
+		<th scope="col">See flights</th>
 	</tr>
 	</thead>
 	<tbody>
 	{% for item in data %}
 	<tr>
 		<td>{{ item.airport }} - {{ item.city }}</td>
-		<td>{{ item.firstDepartureTime.strftime("%a %b %d %H:%M") }}</td>
-		<td>{{ item.lastArrivalTime.strftime("%a %b %d %H:%M") }}</td>
+		<td>{{ item.departure_time.strftime("%a %b %d %H:%M") }}</td>
+		<td>{{ item.return_time.strftime("%a %b %d %H:%M") }}</td>
 		<td>€{{ '%0.2f' % item.price|round(2) }}</td>
 		<td>{{ item.airlines }}</td>
-		<td><a href="{{ item.link }}">Book</a></td>
+		<!--<td><a href="{{ item.link }}">Soon</a></td>-->
 	</tr>
 	{% endfor %}
 	</tbody>
