@@ -1,3 +1,5 @@
+import os
+
 from flask import Flask, render_template, request, redirect
 import config
 from forms import AirportForm
@@ -45,7 +47,9 @@ def result(airport, d00, d01, d10, d11):
 
     # Outbound cities search (1000 cheapest flights)
 
-    headers = {'Content-Type': 'application/json; charset=utf/8', 'apikey': config.api_key}
+    kiwi_key = os.environ['KIWI_API_KEY']
+
+    headers = {'Content-Type': 'application/json; charset=utf/8', 'apikey': kiwi_key}
     params = {'fly_from': airport, 'date_from': date_from, 'date_to': date_to, 'flight_type': 'oneway',
               'one_per_city': '1', 'limit': '1000'}
 

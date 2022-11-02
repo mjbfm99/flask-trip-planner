@@ -61,3 +61,7 @@ jobs:
           app-name: 'trip-planner-test'
           slot-name: 'Production'
           publish-profile: ${{ secrets.AZUREAPPSERVICE_PUBLISHPROFILE_76E123DC1628435EAAF5F972C37F9C5B }}
+        env:
+          API_KEY: ${{ secrets.API_KEY }}
+
+
