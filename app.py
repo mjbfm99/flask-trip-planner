@@ -1,7 +1,6 @@
 import os
 
 from flask import Flask, render_template, request, redirect
-import config
 from forms import AirportForm
 from flask_bootstrap import Bootstrap5
 import requests
