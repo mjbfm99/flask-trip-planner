@@ -30,7 +30,7 @@ def result(airport, d00, d01, d10, d11):
     date_to = d01.replace("-", "/")
     return_from = d10.replace("-", "/")
     return_to = d11.replace("-", "/")
-    airport = "MAD"
+    # airport = "MAD"
 
 
     # Approach
