@@ -1,7 +1,5 @@
 from flask import Flask, render_template, request, redirect
 from forms import AirportForm
-from collections import OrderedDict
-from operator import itemgetter
 from flask_bootstrap import Bootstrap5
 import requests
 import json
