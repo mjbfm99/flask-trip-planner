@@ -54,6 +54,7 @@ def explore_result(airport, d00, d01, d10, d11):
     response = json.loads(requests.get(url, headers=headers, params=params).text)
     #print(response)
 
+
     # Get list of cities
     cities = []
 
@@ -110,7 +111,7 @@ def explore_result(airport, d00, d01, d10, d11):
 
     trips = sorted(trips, key=lambda d: d['price'])
 
-    return render_template("show_list.html", data=trips)
+    return render_template("show_list.html", data=trips, airport=airport)
 
 
 @app.route("/round/<origin>/<destination>/<d00>/<d01>/<d10>/<d11>")

@@ -8,7 +8,7 @@
 	<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.9.1/font/bootstrap-icons.css">
 </head>
 <body>
-<nav class="navbar navbar-light bg-light px-4">
+<nav class="navbar sticky-top bg-light px-4">
 	<a class="navbar-brand" href="{{ url_for('hello') }}">
 		<button type="button" class="btn btn-primary">
 			<svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-arrow-left" viewBox="0 0 16 16">
@@ -17,39 +17,13 @@
 			Back
 		</button>
 	</a>
+	<a class="navbar-brand abs" href="#">Explore from {{ airport }}</a>
+
 </nav>
-<!--<table class="table table-striped">
-	<thead>
-	<tr>
-		<th scope="col">Destination</th>
-		<th scope="col">Departure time</th>
-		<th scope="col">Return time</th>
-		<th scope="col">Price</th>
-		<th scope="col">Airlines</th>
-		<th scope="col">See flights</th>
-	</tr>
-	</thead>
-	<tbody>
+<div class="grid" style="margin: 0 auto; margin-top: 2.5rem;" data-masonry='{ "fitWidth": "true", "itemSelector": ".grid-item" }'>
 	{% for item in data %}
-	<tr>
-		<td>{{ item.airport }} - {{ item.city }}</td>
-		<td>{{ item.departure_time.strftime("%a %b %d %H:%M") }}</td>
-		<td>{{ item.return_time.strftime("%a %b %d %H:%M") }}</td>
-		<td>€{{ '%0.2f' % item.price|round(2) }}</td>
-		<td>{{ item.airlines }}</td>
-		<td><a href="{{ item.link }}"><button type="button" class="btn btn-primary">Go
-			<svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-arrow-right" viewBox="0 0 16 16">
-				<path fill-rule="evenodd" d="M1 8a.5.5 0 0 1 .5-.5h11.793l-3.147-3.146a.5.5 0 0 1 .708-.708l4 4a.5.5 0 0 1 0 .708l-4 4a.5.5 0 0 1-.708-.708L13.293 8.5H1.5A.5.5 0 0 1 1 8z"></path>
-			</svg>
-		</button></a></td>
-	</tr>
-	{% endfor %}
-	</tbody>
-</table>-->
-<div class="grid" style="margin: 0 auto; margin-top: 1rem;" data-masonry='{ "itemSelector": ".grid-item", "columnWidth": 200, "fitWidth": true }'>
-	{% for item in data %}
-	<div class="grid-item" style="margin-right: 1rem; margin-left: 1rem; margin-bottom: 1rem; margin-top: 1rem;">
-		<div class="card" style="width: 20rem">
+	<div class="grid-item" style="margin: 1rem; margin-bottom: -0.5rem; margin-top: -0.5rem;">
+		<div class="card shadow p-3 mb-5 bg-body rounded" style="width: 20rem">
 			<div class="card-body">
 				<h5 class="card-title">{{ item.city }}</h5>
 				<h3 class="card-text">€{{ '%0.0f' % item.price|round() }}</h3>
