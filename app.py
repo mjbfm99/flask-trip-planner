@@ -9,6 +9,7 @@ import datetime
 
 app = Flask(__name__, template_folder='./templates', static_folder='./static')
 Bootstrap5(app)
+kiwi_key = os.environ['KIWI_API_KEY']
 
 
 @app.route("/", methods=['GET', 'POST'])
@@ -20,12 +21,12 @@ def hello():
         d01 = search.d01.data.strftime("%d-%m-%Y")
         d10 = search.d10.data.strftime("%d-%m-%Y")
         d11 = search.d11.data.strftime("%d-%m-%Y")
-        return redirect("/" + airport + "/" + d00 + "/" + d01 + "/" + d10 + "/" + d11)
+        return redirect("/explore/" + airport + "/" + d00 + "/" + d01 + "/" + d10 + "/" + d11)
     return render_template("index.html", form=search)
 
 
-@app.route("/<airport>/<d00>/<d01>/<d10>/<d11>")
-def result(airport, d00, d01, d10, d11):
+@app.route("/explore/<airport>/<d00>/<d01>/<d10>/<d11>")
+def explore_result(airport, d00, d01, d10, d11):
     url = "https://api.tequila.kiwi.com/v2/search"
 
     date_from = d00.replace("-", "/")
@@ -45,8 +46,6 @@ def result(airport, d00, d01, d10, d11):
     # 5. Each city on the list will be clickable. After clicking a city, a new query will be made.
 
     # Outbound cities search (1000 cheapest flights)
-
-    kiwi_key = os.environ['KIWI_API_KEY']
 
     headers = {'Content-Type': 'application/json; charset=utf/8', 'apikey': kiwi_key}
     params = {'fly_from': airport, 'date_from': date_from, 'date_to': date_to, 'flight_type': 'oneway',
@@ -104,6 +103,30 @@ def result(airport, d00, d01, d10, d11):
                               "item_link": "#"})
 
     trips = sorted(trips, key=lambda d: d['price'])
+
+    return render_template("show_list.html", data=trips)
+
+
+@app.route("/round/<airport>/<d00>/<d01>/<d10>/<d11>")
+def round_result(origin, destination, d00, d01, d10, d11):
+
+    date_from = d00.replace("-", "/")
+    date_to = d01.replace("-", "/")
+    return_from = d10.replace("-", "/")
+    return_to = d11.replace("-", "/")
+
+    headers = {'Content-Type': 'application/json; charset=utf/8', 'apikey': kiwi_key}
+    params = {'fly_from': origin, 'fly_to': destination, 'date_from': date_from, 'date_to': date_to,
+              'return_from': return_from, 'return_to': return_to, 'flight_type': 'round',
+              'limit': '20'}
+
+    url = "https://api.tequila.kiwi.com/v2/search"
+    response = json.loads(requests.get(url, headers=headers, params=params).text)
+
+    results = []
+    for r in response['data']:
+        results.append({"inbound_airport": r['']})
+
 
     return render_template("show_list.html", data=trips)
 
