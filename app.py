@@ -6,6 +6,7 @@ from flask_bootstrap import Bootstrap5
 import requests
 import json
 import datetime
+import time
 
 app = Flask(__name__, template_folder='./templates', static_folder='./static')
 Bootstrap5(app)
@@ -21,7 +22,7 @@ def hello():
         d01 = search.d01.data.strftime("%d-%m-%Y")
         d10 = search.d10.data.strftime("%d-%m-%Y")
         d11 = search.d11.data.strftime("%d-%m-%Y")
-        return redirect("/explore/" + airport + "/" + d00 + "/" + d01 + "/" + d10 + "/" + d11)
+        return redirect("/".join(["/explore", airport, d00, d01, d10, d11]))
     return render_template("index.html", form=search)
 
 
@@ -33,8 +34,7 @@ def explore_result(airport, d00, d01, d10, d11):
     date_to = d01.replace("-", "/")
     return_from = d10.replace("-", "/")
     return_to = d11.replace("-", "/")
-    # airport = "MAD"
-
+    #airport = "MAD"
 
     # Approach
     #
@@ -49,9 +49,10 @@ def explore_result(airport, d00, d01, d10, d11):
 
     headers = {'Content-Type': 'application/json; charset=utf/8', 'apikey': kiwi_key}
     params = {'fly_from': airport, 'date_from': date_from, 'date_to': date_to, 'flight_type': 'oneway',
-              'one_per_city': '1', 'limit': '1000'}
+              'one_per_city': '1', 'limit': '500'}
 
     response = json.loads(requests.get(url, headers=headers, params=params).text)
+    #print(response)
 
     # Get list of cities
     cities = []
@@ -63,8 +64,9 @@ def explore_result(airport, d00, d01, d10, d11):
             cities.append("city:" + r['cityCodeTo'])
             outbound_results.append({"outbound_airport": r['flyTo'],
                                      "city": r['cityTo'],
-                                     "outbound_departure_time": datetime.datetime.strptime(r['route'][0]['local_departure'],
-                                                                                      "%Y-%m-%dT%H:%M:%S.%fZ"),
+                                     "outbound_departure_time": datetime.datetime.strptime(
+                                         r['route'][0]['local_departure'],
+                                         "%Y-%m-%dT%H:%M:%S.%fZ"),
                                      # "lastArrivalTime": datetime.datetime.strptime(r['route'][-1]['local_arrival'],
                                      #                                              "%Y-%m-%dT%H:%M:%S.%fZ"),
                                      "outbound_price": round(r['price'], 2),
@@ -91,25 +93,28 @@ def explore_result(airport, d00, d01, d10, d11):
                               "%Y-%m-%dT%H:%M:%S.%fZ"), inbound_price=round(r['price'], 2),
                           inbound_airlines=r['airlines'], inbound_link=r['deep_link'])
             inbound_results.append(r_dict)
-            bp = next((item for item in inbound_results if (item['city'] == r['cityFrom'] and item['inbound_price'] < r['price'])), None)
+            bp = next((item for item in inbound_results if
+                       (item['city'] == r['cityFrom'] and item['inbound_price'] < r['price'])), None)
             if bp is None:
                 o = next(item for item in outbound_results if item['city'] == r['cityFrom'])
-                trips.append({"airport": str({r_dict['inbound_airport'], o['outbound_airport']}).replace("{", "").replace("}", "").replace("'", ""),
+                trips.append({"airport": str({r_dict['inbound_airport'], o['outbound_airport']}).replace("{",
+                                                                                                         "").replace(
+                    "}", "").replace("'", ""),
                               "city": r_dict['city'],
                               "departure_time": o['outbound_departure_time'],
                               "return_time": r_dict['inbound_arrival_time'],
                               "price": o['outbound_price'] + r_dict['inbound_price'],
                               "airlines": list(set(o['outbound_airlines'] + r_dict['inbound_airlines'])),
-                              "item_link": "#"})
+                              "link": "/".join(["/round", airport, r['cityCodeFrom'], d00, d01, d10, d11])
+                              })
 
     trips = sorted(trips, key=lambda d: d['price'])
 
     return render_template("show_list.html", data=trips)
 
 
-@app.route("/round/<airport>/<d00>/<d01>/<d10>/<d11>")
+@app.route("/round/<origin>/<destination>/<d00>/<d01>/<d10>/<d11>")
 def round_result(origin, destination, d00, d01, d10, d11):
-
     date_from = d00.replace("-", "/")
     date_to = d01.replace("-", "/")
     return_from = d10.replace("-", "/")
@@ -123,12 +128,46 @@ def round_result(origin, destination, d00, d01, d10, d11):
     url = "https://api.tequila.kiwi.com/v2/search"
     response = json.loads(requests.get(url, headers=headers, params=params).text)
 
-    results = []
+    # Concept:
+    # In header, a description of the selected itinerary and date range
+    # In the list, each leg of the trip with:
+    # - Origin -> Destination Airports
+    # - Departure and arrival time and date
+    # - Number of stops
+    # - Airlines
+    # - Duration
+    # Each trip with:
+    # - Price
+    # - Link
+
+    trips = []
+
     for r in response['data']:
-        results.append({"inbound_airport": r['']})
+        arrival_at_index = 0
+        for leg in enumerate(r['route']):
+            if leg[1]['flyTo'] == r['flyTo']:
+                arrival_at_index = leg[0]#r['route'][index]
 
+        trips.append({'price': r['price'],
+                      'link': r['deep_link'],
+                      'outbound_route': r['route'][:arrival_at_index + 1],
+                      'inbound_route': r['route'][arrival_at_index + 1:],
+                      'duration_outbound': str(r['duration']['departure']//3600) + "h" + str((r['duration']['departure']//60)%60) + "m",
+                      'duration_inbound': str(r['duration']['return']//3600) + "h" + str((r['duration']['return']//60)%60) + "m"
+                      })
+    # duration fields:
+    # duration['departure']: outbound duration
+    # duration['return']: inbound duration
 
-    return render_template("show_list.html", data=trips)
+    # route (outbound_route or inbound_route) fields:
+    # route[i]['flyTo']: destination airports
+    # route[i]['flyFrom']: origin airports
+    # route[i]['local_departure']: departure times
+    # route[i]['local_arrival]': arrival times
+    # route[i]['airline']: airlines
+    # route[arrival_at_route_index]: number of stops
+
+    return render_template("show_round.html", data=trips)
 
 
 if __name__ == "__main__":

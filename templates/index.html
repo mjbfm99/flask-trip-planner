@@ -1,23 +1,31 @@
+<!doctype html>
+<html lang="en">
 <head>
 	<title>Flight search</title>
 	<meta charset="utf-8">
 	<meta name="viewport" content="width=device-width, initial-scale=1">
-	{{ bootstrap.load_css() }}
-	<link rel="stylesheet" href="{{ url_for('static', filename= 'fonts.css') }}">
-
+	<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-Zenh87qX5JnK2Jl0vWa8Ck2rdkQ2Bzep5IDxbcnCeuOxjzrPF/et3URy9Bv1WTRi" crossorigin="anonymous">
+	<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.9.1/font/bootstrap-icons.css">
 </head>
 <body class="align-items-center">
 <nav class="navbar navbar-light bg-light px-4">
 	<a class="navbar-brand">Flight Search</a>
-</nav><div class="h-75 d-flex align-items-center justify-content-center">
-	<div class="rounded border border-dark d-inline-flex p-4 justify-content-center">
+</nav>
+<div class="h-75 d-flex align-items-center justify-content-center">
+	<div class="card text-bg-light mb-3 p-4" style="max-width: 36rem;">
 		{% from "_formhelpers.html" import render_field %}
 		<form method="post">
 			<p>{{ render_field(form.airport) }}</p>
 			<p>Departure {{ render_field(form.d00) }} {{ render_field(form.d01) }}</p>
 			<p>Return {{ render_field(form.d10) }} {{ render_field(form.d11) }}</p>
 			<p><input type="submit" value="Search"></p>
-		</form></div></div>
-{{ bootstrap.load_js() }}
+		</form>
+	</div>
+</div>
+
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-OERcA2EqjJCMA+/3y+gxIOqMEjwtxJY7qPCqsdltbNJuaOe923+mo//f6V8Qbsw3" crossorigin="anonymous"></script>
+<script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.6/dist/umd/popper.min.js" integrity="sha384-oBqDVmMz9ATKxIep9tiCxS/Z9fNfEXiDAYTujMAeBAsjFuCZSmKbSSUnQlmh/jp3" crossorigin="anonymous"></script>
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.2/dist/js/bootstrap.min.js" integrity="sha384-IDwe1+LCz02ROU9k972gdyvl+AESN10+x7tBKgc9I5HFtuNz0wWnPclzo6p9vxnk" crossorigin="anonymous"></script>
 </body>
+</html>
 
