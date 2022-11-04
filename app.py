@@ -1,21 +1,22 @@
+# pylint: disable=line-too-long
 import os
 
-from flask import Flask, render_template, request, redirect
-from forms import AirportForm
-from flask_bootstrap import Bootstrap5
+import flask_bootstrap
 import requests
 import json
 import datetime
-import time
+import forms
+from flask import Flask, render_template, request, redirect
+
 
 app = Flask(__name__, template_folder='./templates', static_folder='./static')
-Bootstrap5(app)
+flask_bootstrap.Bootstrap5(app)
 kiwi_key = os.environ['KIWI_API_KEY']
 
 
 @app.route("/", methods=['GET', 'POST'])
 def hello():
-    search = AirportForm(request.form)
+    search = forms.AirportForm(request.form)
     if request.method == 'POST':
         airport = str(search.airport.data).upper()
         d00 = search.d00.data.strftime("%d-%m-%Y")
@@ -144,17 +145,61 @@ def round_result(origin, destination, d00, d01, d10, d11):
     trips = []
 
     for r in response['data']:
+
         arrival_at_index = 0
+        airlines = []
+        outbound_route = r['route'][:arrival_at_index + 1]
+        inbound_route = r['route'][arrival_at_index + 1:]
+
+        outbound_departure_time = datetime.datetime.strptime(r['local_departure'], "%Y-%m-%dT%H:%M:%S.%fZ").strftime("%H:%M")
+        outbound_arrival_time = datetime.datetime.strptime(r['local_arrival'], "%Y-%m-%dT%H:%M:%S.%fZ").strftime("%H:%M")
+        outbound_departure_date = datetime.datetime.strptime(r['local_departure'], "%Y-%m-%dT%H:%M:%S.%fZ").strftime("%a %b %d")
+        outbound_arrival_date = datetime.datetime.strptime(r['local_arrival'], "%Y-%m-%dT%H:%M:%S.%fZ").strftime("%a %b %d")
+
+        inbound_departure_time = datetime.datetime.strptime(inbound_route[0]['local_departure'], "%Y-%m-%dT%H:%M:%S.%fZ").strftime("%H:%M")
+        inbound_arrival_time = datetime.datetime.strptime(inbound_route[-1]['local_arrival'], "%Y-%m-%dT%H:%M:%S.%fZ").strftime("%H:%M")
+        inbound_departure_date = datetime.datetime.strptime(inbound_route[0]['local_departure'], "%Y-%m-%dT%H:%M:%S.%fZ").strftime("%b %d")
+        inbound_arrival_date = datetime.datetime.strptime(inbound_route[-1]['local_arrival'], "%Y-%m-%dT%H:%M:%S.%fZ").strftime("%b %d")
+
         for leg in enumerate(r['route']):
+            airlines.append(leg[1]['airline']) # TODO: Translate to name using IATA DB.
             if leg[1]['flyTo'] == r['flyTo']:
-                arrival_at_index = leg[0]#r['route'][index]
+                arrival_at_index = leg[0]
+
+        if arrival_at_index == 0:
+            outbound_stops_str = "Direct"
+        else:
+            outbound_stops_str = str(arrival_at_index) + " stops"
+
+        if arrival_at_index + 2 == len(r['route']):
+            inbound_stops_str = "Direct"
+        else:
+            inbound_stops_str = str(len(r['route']) - 2 - arrival_at_index) + " stops"
 
         trips.append({'price': r['price'],
                       'link': r['deep_link'],
-                      'outbound_route': r['route'][:arrival_at_index + 1],
-                      'inbound_route': r['route'][arrival_at_index + 1:],
-                      'duration_outbound': str(r['duration']['departure']//3600) + "h" + str((r['duration']['departure']//60)%60) + "m",
-                      'duration_inbound': str(r['duration']['return']//3600) + "h" + str((r['duration']['return']//60)%60) + "m"
+                      'outbound_route': outbound_route,
+                      'outbound_origin_airport': r['flyFrom'],
+                      'outbound_destination_airport': r['flyTo'],
+                      'outbound_airlines': ", ".join(airlines[:arrival_at_index + 1]),
+                      'outbound_departure_time': outbound_departure_time,
+                      'outbound_arrival_time': outbound_arrival_time,
+                      'outbound_stops_str': outbound_stops_str,
+                      'outbound_duration': str(r['duration']['departure'] // 3600) + "h" + str((r['duration']['departure'] // 60) % 60) + "m",
+                      'outbound_departure_date': outbound_departure_date,
+                      'outbound_arrival_date': outbound_arrival_date,
+                      'inbound_route': inbound_route,
+                      'inbound_origin_airport': inbound_route[0]['flyFrom'],
+                      'inbound_destination_airport': inbound_route[-1]['flyTo'],
+                      'inbound_airlines': ", ".join(airlines[arrival_at_index + 1:]),
+                      'inbound_departure_time': inbound_departure_time,
+                      'inbound_arrival_time': inbound_arrival_time,
+                      'inbound_stops_str': inbound_stops_str,
+                      'inbound_duration': str(r['duration']['return']//3600) + "h" + str((r['duration']['return']//60)%60) + "m",
+                      'inbound_departure_date': inbound_departure_date,
+                      'inbound_arrival_date': inbound_arrival_date,
+                      'price': r['price'],
+                      'link': r['deep_link']
                       })
     # duration fields:
     # duration['departure']: outbound duration

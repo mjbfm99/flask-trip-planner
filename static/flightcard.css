@@ -1,0 +1,144 @@
+.container {
+  display: grid;
+  grid-template-columns: 9rem 9rem 9rem 9rem;
+  grid-template-rows: 0fr 0fr 0fr 0fr 0fr 0fr 0fr 0fr 0fr 0fr 0fr 0fr;
+  gap: 0px 0px;
+  grid-auto-flow: row;
+  grid-template-areas:
+    "dd0 . dd1 price"
+    "dt0 dhm dt1 price"
+    "dt0 dl dt1 price"
+    "da0 dc da1 price"
+    "sep sep sep price"
+    "rd0 . rd1 price"
+    "rt0 rhm rt1 price"
+    "rt0 rl rt1 price"
+    "ra0 rc ra1 price";
+}
+
+.rt0 {
+  grid-area: rt0;
+  font-size: 2.25em;
+  margin-right: auto;
+}
+
+.rt1 {
+  grid-area: rt1;
+  font-size: 2.25em;
+  margin-left: auto;
+}
+
+.rd0 {
+  grid-area: rd0;
+  font-size: 0.75em;
+}
+
+.rd1 {
+  grid-area: rd1;
+  font-size: 0.75em;
+  margin-left: auto;
+}
+
+.rhm {
+  grid-area: rhm;
+  font-size: 0.75em;
+  margin: auto;
+}
+
+.rl {
+  grid-area: rl;
+}
+
+.rs {
+  grid-area: rs;
+  font-size: 0.75em;
+}
+
+.ra0 {
+  grid-area: ra0;
+}
+
+.ra1 {
+  grid-area: ra1;
+  margin-left: auto;
+}
+
+.rc {
+  grid-area: rc;
+  margin: auto;
+}
+
+.da0 {
+  grid-area: da0;
+  font-size: 1em;
+}
+
+.da1 {
+  grid-area: da1;
+  margin-left: auto;
+  font-size: 1em;
+}
+
+.dc {
+  grid-area: dc;
+  margin: auto;
+  font-size: 1em;
+}
+
+.dt1 {
+  grid-area: dt1;
+  font-size: 2.25em;
+  margin-left: auto;
+}
+
+.dt0 {
+  grid-area: dt0;
+  font-size: 2.25em;
+  margin-right: auto;
+}
+
+.ds {
+  grid-area: ds;
+  font-size: 0.75em;
+}
+
+.dl {
+  grid-area: dl;
+}
+
+.dhm {
+  grid-area: dhm;
+  font-size: 0.75em;
+  margin: auto;
+}
+
+.dd0 {
+  grid-area: dd0;
+  font-size: 0.75em;
+}
+
+.dd1 {
+  grid-area: dd1;
+  font-size: 0.75em;
+  margin-left: auto;
+}
+
+.sep {
+  grid-area: sep;
+}
+
+.price {
+  grid-area: price;
+  font-size: 2.25em;
+  display: flex;
+  justify-content: right;
+  align-items: center;
+}
+
+html,
+body,
+.container {
+  height: 100%;
+  margin: auto;
+}
+

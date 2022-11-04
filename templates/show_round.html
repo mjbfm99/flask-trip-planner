@@ -6,13 +6,25 @@
 	<meta name="viewport" content="width=device-width, initial-scale=1">
 	<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-Zenh87qX5JnK2Jl0vWa8Ck2rdkQ2Bzep5IDxbcnCeuOxjzrPF/et3URy9Bv1WTRi" crossorigin="anonymous">
 	<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.9.1/font/bootstrap-icons.css">
+	<link rel="stylesheet" href="{{ url_for('static', filename='flightcard.css') }}">
+	<link href="https://fonts.cdnfonts.com/css/euclid-circular-a" rel="stylesheet">
+	<link rel="stylesheet" href="{{ url_for('static', filename='fonts.css') }}">
 </head>
 <body>
-<nav class="navbar navbar-light bg-light px-4">
-	<a class="navbar-brand" href="javascript: history.back()"><u>Go back</u></a>
+<nav class="navbar sticky-top bg-light px-4">
+	<a class="navbar-brand" href="{{ url_for('hello') }}">
+		<button type="button" class="btn btn-primary">
+			<svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-arrow-left" viewBox="0 0 16 16">
+				<path fill-rule="evenodd" d="M15 8a.5.5 0 0 0-.5-.5H2.707l3.147-3.146a.5.5 0 1 0-.708-.708l-4 4a.5.5 0 0 0 0 .708l4 4a.5.5 0 0 0 .708-.708L2.707 8.5H14.5A.5.5 0 0 0 15 8z"/>
+			</svg>
+			Back
+		</button>
+	</a>
+	<a class="navbar-brand abs" href="#"></a>
+
 </nav>
-<table class="table table-striped">
-<!--	<thead>
+<!--<table class="table table-striped">
+	<thead>
 	<tr>
 		<th scope="col">Destination</th>
 		<th scope="col">Departure time</th>
@@ -22,32 +34,41 @@
 		<th scope="col">See flights</th>
 	</tr>
 	</thead>-->
-	<tbody>
-	{% for item in data %}
-	<tr>
-		<td>
-			<table class="table table-striped">
+<div class="row row-cols-1 row-cols-md-2 g-4" style="display: flex; justify-content:center;">
+	<div class="col" style="margin-top: 2.5rem;">
+		{% for item in data %}
+		<div class="card shadow p-3 mb-5 bg-body rounded" style="margin-bottom: -1.5rem; pwidth: 40rem">
+			{% include 'flight_card.html' %}
+		</div>
+		{% endfor %}
+	</div>
+</div>
+<!--<tbody>
+{% for item in data %}
+<tr>
+    <td>
+        <table class="table table-striped">
 
-				<tr><td>
-					{{ item.duration_outbound }}
-					{% for leg in item.outbound_route %}
-					{{ leg.flyFrom }}→{{ leg.flyTo }}
-					{% endfor %}
-				</tr></td>
-				<tr><td>
-					{{ item.duration_inbound }}
-					{% for leg in item.inbound_route %}
-					{{ leg.flyFrom }}→{{ leg.flyTo }}
-					{% endfor %}
-				</tr></td>
-			</table>
-		</td>
-		<td>€{{ '%0.2f' % item.price|round(2) }}</td>
-		<td><a href="{{ item.link }}">Book</a></td>
-	</tr>
-	{% endfor %}
-	</tbody>
-</table>
+            <tr><td>
+                {{ item.duration_outbound }}
+                {% for leg in item.outbound_route %}
+                {{ leg.flyFrom }}→{{ leg.flyTo }}
+                {% endfor %}
+            </tr></td>
+            <tr><td>
+                {{ item.duration_inbound }}
+                {% for leg in item.inbound_route %}
+                {{ leg.flyFrom }}→{{ leg.flyTo }}
+                {% endfor %}
+            </tr></td>
+        </table>
+    </td>
+    <td>€{{ '%0.2f' % item.price|round(2) }}</td>
+    <td><a href="{{ item.link }}">Book</a></td>
+</tr>
+{% endfor %}
+</tbody>
+</table>-->
 {{ bootstrap.load_js() }}
 </body>
 </html>
