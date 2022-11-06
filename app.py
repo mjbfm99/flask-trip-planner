@@ -24,7 +24,7 @@ def hello():
         d10 = search.d10.data.strftime("%d-%m-%Y")
         d11 = search.d11.data.strftime("%d-%m-%Y")
         return redirect("/".join(["/explore", airport, d00, d01, d10, d11]))
-    return render_template("index.html", form=search)
+    return render_template("main.html", form=search)
 
 
 @app.route("/explore/<airport>/<d00>/<d01>/<d10>/<d11>")
@@ -112,7 +112,7 @@ def explore_result(airport, d00, d01, d10, d11):
 
     trips = sorted(trips, key=lambda d: d['price'])
 
-    return render_template("show_list.html", data=trips, airport=airport)
+    return render_template("show_explore.html", data=trips, airport=airport)
 
 
 @app.route("/round/<origin>/<destination>/<d00>/<d01>/<d10>/<d11>")
@@ -148,6 +148,18 @@ def round_result(origin, destination, d00, d01, d10, d11):
 
         arrival_at_index = 0
         airlines = []
+        airlines_iata = []
+
+        carriers_json = json.load(open("carriers.json"))
+
+        for leg in enumerate(r['route']):
+            airlines_iata.append(leg[1]['airline'])
+            carrier_name = next((item['name'] for item in carriers_json if item['id'] == leg[1]['airline']), leg[1]['airline'])
+            airlines.append(carrier_name)
+            if leg[1]['flyTo'] == r['flyTo']:
+                arrival_at_index = leg[0]
+
+
         outbound_route = r['route'][:arrival_at_index + 1]
         inbound_route = r['route'][arrival_at_index + 1:]
 
@@ -158,13 +170,8 @@ def round_result(origin, destination, d00, d01, d10, d11):
 
         inbound_departure_time = datetime.datetime.strptime(inbound_route[0]['local_departure'], "%Y-%m-%dT%H:%M:%S.%fZ").strftime("%H:%M")
         inbound_arrival_time = datetime.datetime.strptime(inbound_route[-1]['local_arrival'], "%Y-%m-%dT%H:%M:%S.%fZ").strftime("%H:%M")
-        inbound_departure_date = datetime.datetime.strptime(inbound_route[0]['local_departure'], "%Y-%m-%dT%H:%M:%S.%fZ").strftime("%b %d")
-        inbound_arrival_date = datetime.datetime.strptime(inbound_route[-1]['local_arrival'], "%Y-%m-%dT%H:%M:%S.%fZ").strftime("%b %d")
-
-        for leg in enumerate(r['route']):
-            airlines.append(leg[1]['airline']) # TODO: Translate to name using IATA DB.
-            if leg[1]['flyTo'] == r['flyTo']:
-                arrival_at_index = leg[0]
+        inbound_departure_date = datetime.datetime.strptime(inbound_route[0]['local_departure'], "%Y-%m-%dT%H:%M:%S.%fZ").strftime("%a %b %d")
+        inbound_arrival_date = datetime.datetime.strptime(inbound_route[-1]['local_arrival'], "%Y-%m-%dT%H:%M:%S.%fZ").strftime("%a %b %d")
 
         if arrival_at_index == 0:
             outbound_stops_str = "Direct"
@@ -182,6 +189,7 @@ def round_result(origin, destination, d00, d01, d10, d11):
                       'outbound_origin_airport': r['flyFrom'],
                       'outbound_destination_airport': r['flyTo'],
                       'outbound_airlines': ", ".join(airlines[:arrival_at_index + 1]),
+                      'outbound_airlines_iata': list(dict.fromkeys(airlines_iata[:arrival_at_index + 1])),
                       'outbound_departure_time': outbound_departure_time,
                       'outbound_arrival_time': outbound_arrival_time,
                       'outbound_stops_str': outbound_stops_str,
@@ -192,6 +200,7 @@ def round_result(origin, destination, d00, d01, d10, d11):
                       'inbound_origin_airport': inbound_route[0]['flyFrom'],
                       'inbound_destination_airport': inbound_route[-1]['flyTo'],
                       'inbound_airlines': ", ".join(airlines[arrival_at_index + 1:]),
+                      'inbound_airlines_iata': list(dict.fromkeys(airlines_iata[arrival_at_index + 1:])),
                       'inbound_departure_time': inbound_departure_time,
                       'inbound_arrival_time': inbound_arrival_time,
                       'inbound_stops_str': inbound_stops_str,
@@ -201,6 +210,10 @@ def round_result(origin, destination, d00, d01, d10, d11):
                       'price': r['price'],
                       'link': r['deep_link']
                       })
+        print(airlines_iata)
+        print("O: " + str(airlines_iata[:arrival_at_index + 1]))
+        print("I: " + str(airlines_iata[arrival_at_index + 1:]))
+        print()
     # duration fields:
     # duration['departure']: outbound duration
     # duration['return']: inbound duration

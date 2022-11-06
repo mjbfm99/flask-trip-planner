@@ -15,17 +15,17 @@
 <nav class="navbar navbar-light bg-light px-4">
 	<a class="navbar-brand">Flight Search</a>
 </nav>
-<div class="h-75 d-flex align-items-center justify-content-center">
-	<div class="card text-bg-light mb-3 p-4" style="max-width: 36rem;">
-		{% from "_formhelpers.html" import render_field %}
-		<form method="post">
-			<p>{{ render_field(form.airport) }}</p>
-			<p>Departure {{ render_field(form.d00) }} {{ render_field(form.d01) }}</p>
-			<p>Return {{ render_field(form.d10) }} {{ render_field(form.d11) }}</p>
-			<p><input type="submit" value="Search"></p>
-		</form>
-	</div>
+
+<div class="card text-bg-light mb-3 p-4" style="max-width: 36rem; margin: auto">
+	{% from "_formhelpers.html" import render_field %}
+	<form method="post">
+		<p>{{ render_field(form.airport) }}</p>
+		<p>Departure {{ render_field(form.d00) }} {{ render_field(form.d01) }}</p>
+		<p>Return {{ render_field(form.d10) }} {{ render_field(form.d11) }}</p>
+		<p><input type="submit" value="Search"></p>
+	</form>
 </div>
+
 
 
 

@@ -1,7 +1,10 @@
 <div class="container">
   <div class="da0">{{ item.outbound_origin_airport }}</div>
   <div class="da1">{{ item.outbound_destination_airport }}</div>
-  <div class="dc">{{ item.outbound_airlines }}</div>
+  <div class="dc mx-auto"><!--{{ item.outbound_airlines }}-->
+    {% for airline_iata in item.outbound_airlines_iata %}
+    <img src="https://images.kiwi.com/airlines/64x64/{{ airline_iata }}.png" style="height: 20px" class="rounded">
+    {% endfor %}</div>
   <div class="dt1">{{ item.outbound_arrival_time }}</div>
   <div class="dt0">{{ item.outbound_departure_time }}</div>
   <div class="dl"><hr></div>
@@ -13,7 +16,11 @@
 
   <div class="ra0">{{ item.inbound_origin_airport }}</div>
   <div class="ra1">{{ item.inbound_destination_airport }}</div>
-  <div class="rc">{{ item.inbound_airlines }}</div>
+  <div class="rc mx-auto"><!--{{ item.inbound_airlines }}-->
+    {% for airline_iata in item.inbound_airlines_iata %}
+    <img src="https://images.kiwi.com/airlines/64x64/{{ airline_iata }}.png" style="height: 20px" class="rounded">
+    {% endfor %}
+  </div>
   <div class="rt1">{{ item.inbound_arrival_time }}</div>
   <div class="rt0">{{ item.inbound_departure_time }}</div>
   <div class="rl"><hr></div>

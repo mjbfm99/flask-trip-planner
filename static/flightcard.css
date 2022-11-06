@@ -66,6 +66,7 @@
 .rc {
   grid-area: rc;
   margin: auto;
+  font-size: 0.75em;
 }
 
 .da0 {
@@ -82,7 +83,7 @@
 .dc {
   grid-area: dc;
   margin: auto;
-  font-size: 1em;
+  font-size: 0.75em;
 }
 
 .dt1 {
