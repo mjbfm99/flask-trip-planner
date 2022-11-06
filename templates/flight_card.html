@@ -38,3 +38,43 @@
     </div>
   </div>
 </div>
+
+<div class="container-mobile">
+  <div class="da0">{{ item.outbound_origin_airport }}</div>
+  <div class="da1">{{ item.outbound_destination_airport }}</div>
+  <div class="dc"><!--{{ item.outbound_airlines }}-->
+    {% for airline_iata in item.outbound_airlines_iata %}
+    <img src="https://images.kiwi.com/airlines/64x64/{{ airline_iata }}.png" style="height: 20px" class="rounded">
+    {% endfor %}</div>
+  <div class="dt1">{{ item.outbound_arrival_time }}</div>
+  <div class="dt0">{{ item.outbound_departure_time }}</div>
+  <div class="dl"><hr></div>
+  <div class="dhm">{{ item.outbound_stops_str }} · {{ item.outbound_duration }}</div>
+  <div class="dd0">{{ item.outbound_departure_date }}</div>
+  <div class="dd1">{{ item.outbound_arrival_date }}</div>
+
+  <div class="sep"><hr></div>
+
+  <div class="ra0">{{ item.inbound_origin_airport }}</div>
+  <div class="ra1">{{ item.inbound_destination_airport }}</div>
+  <div class="rc"><!--{{ item.inbound_airlines }}-->
+    {% for airline_iata in item.inbound_airlines_iata %}
+    <img src="https://images.kiwi.com/airlines/64x64/{{ airline_iata }}.png" style="height: 20px" class="rounded">
+    {% endfor %}
+  </div>
+  <div class="rt1">{{ item.inbound_arrival_time }}</div>
+  <div class="rt0">{{ item.inbound_departure_time }}</div>
+  <div class="rl"><hr></div>
+  <div class="rhm">{{ item.inbound_stops_str }} · {{ item.inbound_duration }}</div>
+  <div class="rd0">{{ item.inbound_departure_date }}</div>
+  <div class="rd1">{{ item.inbound_arrival_date }}</div>
+
+  <div class="price">
+    <div id="amt" class="mx-2">
+       €{{ item.price }}
+    </div>
+    <div id="book">
+    <a href="{{ item.link }}"><button class="btn btn-primary btn-sm" type="button">Book</button></a>
+    </div>
+  </div>
+</div>

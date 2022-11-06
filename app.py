@@ -210,10 +210,7 @@ def round_result(origin, destination, d00, d01, d10, d11):
                       'price': r['price'],
                       'link': r['deep_link']
                       })
-        print(airlines_iata)
-        print("O: " + str(airlines_iata[:arrival_at_index + 1]))
-        print("I: " + str(airlines_iata[arrival_at_index + 1:]))
-        print()
+
     # duration fields:
     # duration['departure']: outbound duration
     # duration['return']: inbound duration
