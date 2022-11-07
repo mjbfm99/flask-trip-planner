@@ -125,7 +125,7 @@ def round_result(origin, destination, d00, d01, d10, d11):
     headers = {'Content-Type': 'application/json; charset=utf/8', 'apikey': kiwi_key}
     params = {'fly_from': origin, 'fly_to': destination, 'date_from': date_from, 'date_to': date_to,
               'return_from': return_from, 'return_to': return_to, 'flight_type': 'round',
-              'limit': '20'}
+              'limit': '100'}
 
     url = "https://api.tequila.kiwi.com/v2/search"
     response = json.loads(requests.get(url, headers=headers, params=params).text)
