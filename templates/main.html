@@ -10,16 +10,18 @@
 	<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 	<link href="https://fonts.googleapis.com/css2?family=Work+Sans:wght@400;700&display=swap" rel="stylesheet">
 	<link rel="stylesheet" href="{{ url_for('static', filename='fonts.css') }}">
+	<link rel="stylesheet" href="{{ url_for('static', filename='dropdown.css') }}">
 </head>
 <body class="align-items-center">
 <nav class="navbar navbar-light bg-light px-4">
 	<a class="navbar-brand">Flight Search</a>
 </nav>
+
 <div class="h-75 d-flex align-items-center justify-content-center">
-	<div class="card text-bg-light mb-3 p-4" style="max-width: 36rem;">
+	<div class=" card text-bg-light shadow p-3 mb-3 bg-body rounded" style="max-width: 36rem;">
 		{% from "_formhelpers.html" import render_field %}
 		<form method="post">
-			<p>{{ render_field(form.airport) }}</p>
+			<p><input name="autocomplete" id="autocomplete" type="text" class="form-control"/></p>
 			<p>Departure {{ render_field(form.d00) }} {{ render_field(form.d01) }}</p>
 			<p>Return {{ render_field(form.d10) }} {{ render_field(form.d11) }}</p>
 			<p><input type="submit" value="Search"></p>
@@ -30,8 +32,11 @@
 
 
 <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-OERcA2EqjJCMA+/3y+gxIOqMEjwtxJY7qPCqsdltbNJuaOe923+mo//f6V8Qbsw3" crossorigin="anonymous"></script>
-<script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.6/dist/umd/popper.min.js" integrity="sha384-oBqDVmMz9ATKxIep9tiCxS/Z9fNfEXiDAYTujMAeBAsjFuCZSmKbSSUnQlmh/jp3" crossorigin="anonymous"></script>
-<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.2/dist/js/bootstrap.min.js" integrity="sha384-IDwe1+LCz02ROU9k972gdyvl+AESN10+x7tBKgc9I5HFtuNz0wWnPclzo6p9vxnk" crossorigin="anonymous"></script>
+<script src="https://cdn.jsdelivr.net/npm/jquery@3.6.1/dist/jquery.min.js" integrity="sha256-o88AwQnZB+VDvE9tvIXrMQaPlFFSUTR+nldQm1LuPXQ=" crossorigin="anonymous"></script>
+<script type="text/javascript" src="//cdnjs.cloudflare.com/ajax/libs/lodash.js/0.10.0/lodash.min.js"></script>
+<script src="https://unpkg.com/fuse.js@2.5.0/src/fuse.min.js"></script>
+<script src="https://screenfeedcontent.blob.core.windows.net/html/airports.js"></script>
+<script type="text/javascript" src="{{ url_for('static', filename='dropdown.js') }}"></script>
 </body>
 </html>
 

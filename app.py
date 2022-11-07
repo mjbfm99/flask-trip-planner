@@ -18,7 +18,7 @@ kiwi_key = os.environ['KIWI_API_KEY']
 def hello():
     search = forms.AirportForm(request.form)
     if request.method == 'POST':
-        airport = str(search.airport.data).upper()
+        airport = request.form['autocomplete']
         d00 = search.d00.data.strftime("%d-%m-%Y")
         d01 = search.d01.data.strftime("%d-%m-%Y")
         d10 = search.d10.data.strftime("%d-%m-%Y")
