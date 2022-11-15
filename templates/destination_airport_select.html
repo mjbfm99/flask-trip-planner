@@ -1,0 +1,14 @@
+                            <select class="selectpicker" data-size="5" data-live-search="true" multiple title="To..." multiple id="destination" name="destination">>
+                                {% for item in cities %}
+                                <option data-tokens="{{ item[1] }}" data-content='
+                                    <i class="bi-buildings-fill lm-2"></i>
+                                    {{ item[0] }}
+                                '></option>
+                                {% endfor %}
+                                {% for item in airports %}
+                                <option data-tokens="{{ item[1] }}" data-content='
+                                    <i class="bi-airplane-fill lm-2"></i>
+                                    {{ item[0] }}
+                                '></option>
+                                {% endfor %}
+                            </select>

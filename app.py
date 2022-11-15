@@ -7,6 +7,7 @@ import json
 import datetime
 import forms
 from flask import Flask, render_template, request, redirect
+import csv
 
 
 app = Flask(__name__, template_folder='./templates', static_folder='./static')
@@ -18,13 +19,38 @@ kiwi_key = os.environ['KIWI_API_KEY']
 def hello():
     search = forms.AirportForm(request.form)
     if request.method == 'POST':
+        print(request)
+        print(request.form)
         airport = request.form['autocomplete']
         d00 = search.d00.data.strftime("%d-%m-%Y")
         d01 = search.d01.data.strftime("%d-%m-%Y")
         d10 = search.d10.data.strftime("%d-%m-%Y")
         d11 = search.d11.data.strftime("%d-%m-%Y")
         return redirect("/".join(["/explore", airport, d00, d01, d10, d11]))
-    return render_template("main.html", form=search)
+    else:
+        # airports_csv = csv.reader(open("airports.csv", "r"), delimiter=",")
+        # 0. Code
+        # 1. Time zone
+        # 2. Name
+        # 3. City code
+        # 4. Country ID
+        # 5. Location
+        # 6. Elevation
+        # 7. URL
+        # 8. ICAO
+        # 9. City
+        # 10. County
+        # 11. State
+
+        cities_csv = csv.reader(open("cities.csv"), delimiter=",")
+
+        searchTextList = []
+        # for row in airports_csv:
+        #     searchTextList.append([str(row[0]) + " - " + str(row [2]), str(row[0])])
+
+        for row in cities_csv:
+            searchTextList.append([row[1] + " - " + row[0], row[0]])
+        return render_template("start.html", form=search, cities=searchTextList[1:])
 
 
 @app.route("/explore/<airport>/<d00>/<d01>/<d10>/<d11>")
