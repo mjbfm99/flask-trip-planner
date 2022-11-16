@@ -1,0 +1,1811 @@
+city_code,city_name,rank
+MAD,Madrid,1
+BCN,Barcelona,1
+DEL,New Delhi,2
+AMS,Amsterdam,2
+MNL,Manila,3
+KUL,Kuala Lumpur,3
+LIS,Lisbon,3
+MIA,Miami,3
+SIN,Singapore,4
+CUN,Cancún,4
+DPS,Denpasar,4
+VIE,Vienna,5
+BER,Berlin,5
+HKT,Phuket City,6
+BKK,Bangkok,6
+FRA,Frankfurt,7
+BOM,Mumbai,7
+SYD,Sydney,7
+NYC,New York,8
+MEX,Mexico City,8
+CPH,Copenhagen,9
+DUB,Dublin,9
+ATH,Athens,10
+PRG,Prague,10
+SFO,San Francisco,10
+BUD,Budapest,10
+TYO,Tokyo,11
+BOS,Boston,11
+SGN,Ho Chi Minh City,11
+TLV,Tel Aviv,11
+AGP,Málaga,12
+ATL,Atlanta,12
+MUC,Munich,12
+DEN,Denver,13
+CAI,Cairo,13
+PMI,"Palma, Majorca",14
+BOG,Bogotá,14
+CNX,Chiang Mai,14
+OPO,Porto,14
+MEL,Melbourne,15
+RAK,Marrakesh,15
+MAN,Manchester,15
+AYT,Antalya,16
+HKG,Hong Kong,17
+BLR,Bengaluru,17
+SEA,Seattle,17
+LIM,Lima,18
+NAP,Naples,18
+YVR,Vancouver,18
+DUS,Düsseldorf,19
+OSA,Osaka,20
+OSL,Oslo,20
+JED,Jeddah,20
+KRK,Kraków,20
+AKL,Auckland,21
+HAN,Hanoi,21
+EDI,Edinburgh,22
+SJU,San Juan,22
+ALC,Alicante,22
+HEL,Helsinki,23
+GVA,Geneva,23
+HYD,Hyderabad,23
+LPA,Las Palmas,24
+PHL,Philadelphia,24
+SVQ,Seville,25
+MLE,Malé,25
+HNL,Honolulu,25
+HAM,Hamburg,25
+SJO,San José,26
+FUK,Fukuoka,26
+AUH,Abu Dhabi,27
+VLC,Valencia,27
+CEB,Cebu,28
+SAN,San Diego,28
+MAA,Chennai,28
+IST,Istanbul,29
+MIL,Milan,29
+BKI,Kota Kinabalu,30
+SCL,Santiago de Chile,30
+BNE,Brisbane,30
+PUJ,Punta Cana,31
+MLA,Malta,31
+AMM,Amman,31
+CTA,Catania,31
+PER,Perth,32
+PEN,Penang,32
+BUH,Bucharest,32
+MSP,Minneapolis,33
+NCE,Nice,33
+AMD,Ahmedabad,33
+CPT,Cape Town,33
+GDL,Guadalajara,34
+AUS,Austin,34
+COK,Kochi,34
+MSY,New Orleans,34
+MDE,Medellín,35
+CGN,Cologne,35
+CLT,Charlotte,36
+GOI,Goa,36
+LYS,Lyon,37
+SLC,Salt Lake City,37
+FNC,Funchal,38
+JKT,Jakarta,38
+MRS,Marseille,39
+SOF,Sofia,39
+ISB,Islamabad,39
+DTT,Detroit,40
+FAO,Faro,40
+LHE,Lahore,41
+BNA,Nashville,41
+CJU,Jeju City,41
+ACE,Lanzarote,42
+CAS,Casablanca,42
+SSH,Sharm El Sheikh,42
+SSA,Salvador,43
+YYC,Calgary,43
+BEG,Belgrade,43
+REC,Recife,44
+STR,Stuttgart,44
+PUS,Busan,44
+PDX,Portland,45
+FUE,Fuerteventura,45
+LCA,Larnaca,45
+RUH,Riyadh,46
+PMO,Palermo,46
+BLQ,Bologna,46
+DAD,Da Nang,47
+KBV,Krabi,47
+WAS,"Washington, D.C.",47
+STO,Stockholm,48
+BEY,Beirut,48
+HRG,Hurghada,48
+KTM,Kathmandu,49
+TBS,Tbilisi,50
+PVR,Puerto Vallarta,50
+FOR,Fortaleza,50
+LON,London,51
+SKG,Thessaloniki,51
+KCH,Kuching,51
+TUN,Tunis,52
+DAC,Dhaka,52
+CCU,Kolkata,52
+TIA,Tirana,53
+NBO,Nairobi,53
+GDN,Gdańsk,53
+DXB,Dubai,54
+RIX,Riga,54
+SPK,Sapporo,55
+BSB,Brasília,55
+GUA,Guatemala City,55
+OKA,Okinawa Island,56
+CTG,Cartagena,56
+SJD,San José del Cabo,57
+IBZ,Ibiza,57
+OAK,Oakland,57
+RDU,Raleigh,58
+TLS,Toulouse,58
+SAO,São Paulo,59
+TLL,Tallinn,59
+FLR,Florence,59
+JHB,Johor Bahru,60
+EIN,Eindhoven,61
+SAL,San Salvador,61
+MRU,Mauritius Island,61
+BOD,Bordeaux,62
+BIO,Bilbao,62
+HOU,Houston,62
+USM,Ko Samui,63
+BHX,Birmingham,63
+RIO,Rio de Janeiro,65
+LGK,Langkawi,65
+KIV,Chișinău,66
+NTE,Nantes,66
+TRN,Turin,66
+BUE,Buenos Aires,67
+VNO,Vilnius,67
+MBJ,Montego Bay,68
+POA,Porto Alegre,68
+AGA,Agadir,69
+GOT,Gothenburg,69
+GLA,Glasgow,70
+ZAG,Zagreb,70
+EVN,Yerevan,70
+FLN,Florianópolis,71
+SNA,Santa Ana,71
+FMY,Fort Myers,71
+LUX,Luxembourg City,72
+MCT,Muscat,72
+PNH,Phnom Penh,72
+CLO,Cali,73
+IND,Indianapolis,73
+PIT,Pittsburgh,73
+KTW,Katowice,74
+ALG,Algiers,74
+KHI,Karachi,75
+UIO,Quito,75
+NUE,Nuremberg,75
+ADL,Adelaide,76
+ATQ,Amritsar,76
+KWI,Kuwait City,76
+PSA,Pisa,77
+HER,Heraklion,77
+BLL,Billund,77
+MCZ,Maceió,78
+ACC,Accra,78
+MPH,Caticlan,78
+NAT,Natal,79
+IZM,İzmir,79
+LOS,Lagos,79
+MGA,Managua,80
+PFO,Paphos,80
+WRO,Wrocław,80
+CAG,Cagliari,81
+MTY,Monterrey,81
+PNQ,Pune,81
+HAJ,Hanover,82
+HDY,Hat Yai,82
+TIJ,Tijuana,83
+AHO,Alghero,83
+CWB,Curitiba,83
+SAC,Sacramento,84
+BHZ,Belo Horizonte,84
+OGG,Kahului,84
+DMM,Dammam,85
+SEL,Seoul,85
+CMH,Columbus,85
+TRV,Thiruvananthapuram,86
+GYE,Guayaquil,86
+TNG,Tangier,86
+SPU,Split,87
+STL,St. Louis,87
+TAS,Tashkent,88
+TOS,Tromsø,88
+ALA,Almaty,89
+CVG,Cincinnati,89
+MED,Medina,90
+JAI,Jaipur,90
+MKC,Kansas City,90
+SCQ,Santiago de Compostela,91
+SEZ,Mahé,91
+SAT,San Antonio,91
+HFD,Hartford,92
+NGO,Nagoya,92
+CEI,Chiang Rai Province,92
+OOL,Gold Coast,93
+PTP,Pointe-à-Pitre,93
+DTM,Dortmund,93
+CRK,Angeles,94
+PBI,West Palm Beach,94
+VRN,Verona,94
+BRS,Bristol,95
+CHI,Chicago,95
+JTR,Santorini,95
+SXB,Strasbourg,96
+BAK,Baku,96
+NAS,Nassau,97
+JPA,"João Pessoa, Paraíba",97
+LPL,Liverpool,97
+PDL,Ponta Delgada,98
+AUA,Aruba,98
+ANK,Ankara,98
+DVO,Davao,99
+JAX,Jacksonville,99
+MVD,Montevideo,100
+RVN,Rovaniemi,100
+FDF,Fort-de-France,101
+RIC,Richmond,101
+BGO,Bergen,101
+SZG,Salzburg,102
+CHC,Christchurch,102
+GYN,Goiânia,102
+RUN,Saint-Denis,103
+TGD,Podgorica,103
+GUM,Hagåtña,103
+BUR,Burbank,104
+CCJ,Kozhikode,104
+MKE,Milwaukee,104
+SHA,Shanghai,105
+BPS,Porto Seguro,105
+NHA,Nha Trang,105
+DBV,Dubrovnik,106
+DAR,Dar es Salaam,106
+LKO,Lucknow,107
+FEZ,Fes,107
+SUB,Surabaya,107
+CLJ,Cluj-Napoca,108
+DKR,Dakar,108
+KIN,Kingston,109
+POZ,Poznań,109
+SBW,Sibu,109
+MYY,Miri,110
+TWU,Tawau,110
+UTH,Udon Thani,110
+PRN,Pristina,111
+URT,Surat Thani Province,111
+MEM,Memphis,111
+KKC,Khon Kaen,112
+YWG,Winnipeg,112
+BAH,Bahrain Island,113
+MES,Medan,113
+BFS,Belfast,113
+MBA,Mombasa,114
+DLM,Dalaman,114
+CUZ,Cusco,114
+RBA,Rabat,115
+STT,Saint Thomas,115
+BEL,Belém,115
+ADD,Addis Ababa,116
+IGU,Foz do Iguaçu,116
+RNO,Reno,116
+MYR,Myrtle Beach,117
+ASR,Kayseri,117
+YEA,Edmonton,117
+CFU,Corfu,118
+VIX,"Vitória, Espírito Santo",118
+PAR,Paris,118
+ONT,Ontario,119
+CAN,Guangzhou,119
+REP,Siem Reap,120
+YHZ,Halifax,120
+BRE,Bremen,121
+CNS,Cairns,121
+PQC,Phú Quốc,121
+MAO,Manaus,122
+CHS,Charleston,122
+NAN,Nadi,122
+NCL,Newcastle upon Tyne,123
+BJX,León,123
+SJJ,Sarajevo,124
+SKP,Skopje,124
+BDS,Brindisi,124
+SDF,Louisville,125
+SUF,Lamezia Terme,125
+BGI,Bridgetown,125
+BGW,Baghdad,126
+EBL,Erbil,126
+KLO,Kalibo,126
+TRZ,Tiruchirappalli,127
+KOA,Kailua,127
+RHO,Rhodes,127
+MID,Mérida,128
+FMM,Memmingen,128
+BUF,Buffalo,128
+SMR,Santa Marta,129
+TSE,Nur-Sultan,129
+SAP,San Pedro Sula,129
+PPS,Puerto Princesa,130
+GOA,Genoa,130
+RTM,Rotterdam,130
+LJU,Ljubljana,131
+IAS,Iași,131
+BTS,Bratislava,131
+NVT,Navegantes,132
+PPT,Tahiti,132
+YOW,Ottawa,132
+ADA,Adana,133
+KBR,Kota Bharu,133
+BAQ,Barranquilla,133
+LIR,Liberia,134
+VTE,Vientiane,134
+TCI,Tenerife,134
+PNS,Pensacola,135
+STI,Santiago de los Caballeros,135
+OLB,Olbia,135
+SLZ,São Luís,136
+LIH,Kauai,136
+PAT,Patna,136
+INN,Innsbruck,137
+CUR,Willemstad,137
+LIL,Lille,138
+ECN,Northern Cyprus,138
+TAG,Panglao,138
+IXC,Chandigarh,139
+OAX,Oaxaca,139
+VAR,Varna,139
+CCS,Caracas,140
+ABQ,Albuquerque,140
+CHQ,Chania,140
+LEJ,Leipzig,141
+DUR,Durban,141
+XRY,Jerez de la Frontera,141
+SXM,Lower Prince's Quarter,142
+JMK,Mykonos,142
+BOI,Boise,142
+LBA,Leeds,143
+ORK,Cork,143
+WAW,Warsaw,143
+MAH,Menorca,144
+MPL,Montpellier,144
+ADZ,San Andrés,144
+FKB,Karlsruhe,145
+VNS,Varanasi,145
+WLG,Wellington,145
+GRX,Granada,146
+OVD,Asturias,146
+PEI,Pereira,147
+GAU,Guwahati,147
+SRQ,Sarasota,147
+SXR,Srinagar,148
+EBB,Entebbe,148
+POS,Port of Spain,149
+BBI,Bhubaneswar,149
+ORL,Orlando,149
+KUT,Kutaisi,150
+ASU,Asunción,150
+SDR,Santander,151
+ZQN,Queenstown,151
+UBP,Ubon Ratchathani Province,151
+THR,Tehran,152
+SID,Sal,152
+TNR,Antananarivo,152
+ALY,Alexandria,153
+KRT,Khartoum,153
+FRU,Bishkek,153
+ORF,Norfolk,154
+KHH,Kaohsiung,154
+ILO,Iloilo City,155
+TYS,Knoxville,155
+HBA,Hobart,155
+BQN,Aguadilla,156
+SDK,Sandakan,156
+ABJ,Abidjan,156
+AJU,Aracaju,157
+SAV,Savannah,157
+YLW,Kelowna,157
+DRS,Dresden,158
+WDH,Windhoek,158
+VGO,Vigo,159
+GRO,Girona,159
+BJL,Banjul,159
+SKT,Sialkot,160
+SVG,Stavanger,160
+BZE,Belize City,160
+THE,Teresina,161
+TSR,Timișoara,161
+DJE,Djerba,161
+ANC,Anchorage,162
+SCV,Suceava,162
+YQB,Quebec City,162
+TRD,Trondheim,163
+SRZ,Santa Cruz de la Sierra,163
+TAC,Tacloban,163
+BUS,Batumi,164
+GRR,Grand Rapids,164
+OMA,Omaha,165
+MZT,Mazatlán,165
+IXE,Mangalore,165
+IDR,Indore,166
+BJS,Beijing,166
+IPH,Ipoh,166
+IXB,Bagdogra,167
+BOB,Bora Bora,167
+LCG,A Coruña,167
+TZX,Trabzon,168
+RGN,Yangon,168
+QRO,Santiago de Querétaro,168
+BCD,Bacolod,169
+VTZ,Visakhapatnam,169
+KUN,Kaunas,169
+YTO,Toronto,170
+PSP,Palm Springs,170
+SYR,Syracuse,170
+ROM,Rome,171
+RAI,Praia,171
+ABZ,Aberdeen,172
+AQJ,Aqaba,172
+CGY,Cagayan de Oro,172
+ORN,Oran,173
+VCE,Venice,173
+CGB,Cuiabá,173
+MIR,Monastir,174
+MLM,Morelia,174
+LOP,"Praya, Lombok",174
+DLA,Douala,175
+IXZ,Port Blair,175
+CJB,Coimbatore,176
+TUS,Tucson,176
+NAG,Nagpur,177
+ROC,Rochester,177
+CNN,Kannur,178
+CBR,Canberra,178
+AAL,Aalborg,178
+GZT,Gaziantep,179
+EYW,Key West,179
+NDR,Nador,179
+HRE,Harare,180
+RZE,Rzeszów,180
+DOH,Doha,181
+OKC,Oklahoma City,181
+CUC,Cúcuta,181
+AVL,Asheville,182
+ACA,Acapulco,182
+BGA,Bucaramanga,183
+ELP,El Paso,183
+BJV,Bodrum,184
+DRW,Darwin,184
+LPB,La Paz,184
+CTU,Chengdu,185
+RMF,Marsa Alam,185
+OUD,Oujda,185
+MDZ,Mendoza,186
+IXR,Ranchi,186
+TAE,Daegu,186
+CGR,Campo Grande,187
+PVD,Providence,187
+BDO,Bandung,187
+COR,Córdoba,188
+DSM,Des Moines,188
+SPC,Santa Cruz de La Palma,188
+PXM,"Puerto Escondido, Oaxaca",189
+JRO,Mount Kilimanjaro,189
+RNS,Rennes,189
+IOS,Ilhéus,190
+MUX,Multan,190
+BTU,Bintulu,191
+SNN,"Shannon, County Clare",191
+KBL,Kabul,191
+PHX,Phoenix,192
+AJA,Ajaccio,192
+LXR,Luxor,193
+TGG,Kuala Terengganu,193
+TRS,Trieste,194
+FAT,Fresno,194
+VER,Veracruz,195
+BDQ,Vadodara,195
+SZX,Shenzhen,195
+GEG,Spokane,196
+PLS,Providenciales,196
+GRZ,Graz,196
+ALB,Albany,197
+KGL,Kigali,197
+UDR,Udaipur,198
+TST,Trang,198
+CWL,Cardiff,198
+BIQ,Biarritz,199
+POP,Puerto Plata,199
+GEO,Georgetown,199
+UTP,Pattaya,200
+DED,Dehradun,200
+LPQ,Luang Prabang,201
+ABV,Abuja,201
+YHM,Hamilton,202
+BZN,Bozeman,202
+ZAZ,Zaragoza,203
+DYU,Dushanbe,203
+TIV,Tivat,203
+GNB,Grenoble,204
+BOJ,Burgas,204
+XPL,Comayagua,204
+GZP,Gazipaşa,205
+KGS,Kos,205
+ENI,"El Nido, Palawan",205
+IXJ,Jammu,206
+YYJ,Victoria,206
+BIA,Bastia,206
+GCM,Grand Cayman,207
+IXM,Madurai,207
+AAR,Aarhus,207
+NQT,Nottingham,208
+JDO,Juazeiro do Norte,208
+AIY,Atlantic City,209
+KSC,Košice,209
+GSP,Greenville,210
+BWN,Bandar Seri Begawan,210
+ICT,Wichita,211
+XMN,Xiamen,211
+EAS,Donostia / San Sebastián,212
+BRU,Brussels,212
+MSN,Madison,212
+PWM,Portland,213
+TGZ,Tuxtla Gutiérrez,213
+GIB,Gibraltar,214
+STV,Surat,214
+BHM,Birmingham,215
+SBZ,Sibiu,215
+LAD,Luanda,215
+ZIH,Ixtapa,216
+ANU,Antigua,216
+VGA,Vijayawada,216
+SPN,Saipan,217
+TPE,Taipei,217
+DLI,Da Lat,217
+REU,Reus,218
+PEW,Peshawar,218
+LUZ,Lublin,218
+MFM,Macau,219
+HUX,Huatulco,219
+HGH,Hangzhou,219
+TUL,Tulsa,220
+USH,Ushuaia,220
+BRC,Bariloche,220
+KYA,Konya,221
+INV,Inverness,221
+LEI,Almería,221
+USU,"Busuanga, Palawan",222
+VDC,Vitória da Conquista,222
+MHT,Manchester,222
+NOU,Nouméa,223
+MJV,Murcia,223
+IAO,Del Carmen,223
+CZM,Cozumel,224
+TPS,Trapani,224
+AGU,Aguascalientes,224
+TIR,Tirupati,225
+BES,Brest,225
+SOU,Southampton,225
+HMO,Hermosillo,226
+SLL,Salalah,227
+COS,Colorado Springs,227
+LIT,Little Rock,228
+AQP,Arequipa,229
+RPR,Raipur,229
+AHB,Abha,229
+ISG,"Ishigaki, Okinawa",230
+PHS,Phitsanulok,230
+BKO,Bamako,231
+HMB,Sohag,231
+MMA,Malmö,231
+BTV,Burlington,232
+CUU,Chihuahua,232
+MTR,Montería,232
+KOP,Nakhon Phanom Province,233
+CJS,Ciudad Juárez,233
+DFW,Dallas,234
+BCM,Bacău,234
+SZF,Samsun,234
+TPA,Tampa,235
+DGT,Dumaguete,235
+UDI,Uberlândia,236
+PVH,Porto Velho,236
+KTT,Kittilä,236
+CMF,Chambéry,237
+HPN,Westchester County,237
+NGS,Nagasaki,237
+GSO,Greensboro,238
+CKY,Conakry,238
+LDB,Londrina,239
+FTE,El Calafate,239
+PUQ,Punta Arenas,239
+NAV,Nevşehir,240
+LAP,La Paz,241
+EUG,Eugene,241
+FIH,Kinshasa,241
+YXX,Abbotsford,242
+TLC,Toluca,242
+PBM,Paramaribo,242
+HIJ,Hiroshima,243
+FMO,Münster,243
+PMW,Palmas,243
+LLA,Luleå,244
+PDG,Padang,244
+FEN,Fernando de Noronha,244
+CUL,Culiacán,245
+SLP,San Luis Potosí,245
+YYT,St. John s,246
+LGB,Long Beach,246
+BHO,Bhopal,246
+AXM,Armenia,247
+UKB,Kobe,247
+SZZ,Szczecin,248
+LUN,Lusaka,248
+MCY,Sunshine Coast Region,249
+MPM,Maputo,249
+LFW,Lomé,249
+STX,Saint Croix,250
+PLZ,Port Elizabeth,250
+LST,City of Launceston,250
+JJD,"Cruz, Ceará",251
+BVB,Boa Vista,251
+JAC,Jackson,251
+GOP,Gorakhpur,252
+SRG,Semarang,252
+JDH,Jodhpur,252
+PAP,Port-au-Prince,253
+IGR,Puerto Iguazú,253
+TER,Terceira Island,254
+XSP,Seletar,254
+TZL,Tuzla,254
+UPG,Makassar,255
+KMJ,Kumamoto,255
+JER,Saint Helier,255
+ISU,Sulaymaniyah,256
+COO,Cotonou,256
+FYV,Fayetteville,257
+RAJ,Rajkot,257
+CID,Cedar Rapids,257
+VSA,Villahermosa,258
+LYR,Longyearbyen,259
+VPS,Destin,259
+NKG,Nanjing,259
+CKG,Chongqing,260
+PGD,Punta Gorda,260
+FSC,Figari,261
+TUU,Tabuk,261
+ZAM,Zamboanga City,261
+OSS,Osh,262
+AOI,Ancona,262
+MST,Maastricht,262
+INI,Niš,263
+TAO,Qingdao,263
+SKD,Samarkand,263
+MLB,Melbourne,264
+CAE,Columbia,264
+ITO,Hilo,265
+ECP,Panama City,265
+MCP,Macapá,266
+FNA,Freetown,266
+FSD,Sioux Falls,266
+BON,Bonaire,267
+TIF,Ta if,267
+PSE,Ponce,267
+MGF,Maringá,268
+DAY,Dayton,268
+WUH,Wuhan,268
+LEX,Lexington,269
+PBC,Puebla,269
+ELQ,Al-Qassim Region,269
+VIT,Vitoria-Gasteiz,270
+CXJ,Caxias do Sul,270
+LDE,Lourdes,271
+PGF,Perpignan,271
+HKD,Hakodate,271
+KMG,Kunming,272
+KRN,Kiruna,272
+PUY,Pula,272
+TMP,Tampere,273
+STM,Santarém,273
+HSV,Huntsville,274
+YXE,Saskatoon,274
+TSV,Townsville,274
+FAE,Sørvágur,275
+MXL,Mexicali,275
+REG,Reggio Calabria,276
+LCJ,Łódź,276
+TLH,Tallahassee,276
+IVL,Ivalo,277
+GPS,Baltra Island,277
+EFL,Cephalonia,278
+SAG,Shirdi,278
+ILM,Wilmington,278
+BDA,Bermuda,279
+TKU,Turku,280
+SHE,Shenyang,281
+SLU,Saint Lucia,281
+GND,St George's,282
+CZL,Constantine,282
+LRM,La Romana,282
+LBU,Labuan,283
+RTB,Coxen Hole,283
+MMY,Miyakojima,284
+LYP,Faisalabad District,284
+PSO,Pasto,284
+NQY,Newquay,285
+CBB,Cochabamba,285
+CAK,Akron,286
+PKU,Pekanbaru,286
+LOE,Loei Province,287
+SGF,Springfield,287
+GRB,Green Bay,287
+JSI,Skiathos,288
+GES,General Santos,288
+LBJ,Labuan Bajo,289
+OUL,Oulu,289
+BFV,Buriram Province,290
+HTY,Hatay Province,290
+DIY,Diyarbakır,290
+SNO,Sakon Nakhon,291
+DGO,Durango,291
+PIU,Piura,291
+FAR,Fargo,292
+KWJ,Gwangju,292
+IXL,Leh,292
+HAR,Harrisburg,293
+GIZ,Jizan,293
+FAI,Fairbanks,293
+ASE,Aspen,294
+PXO,Vila Baleira,294
+RAO,Ribeirão Preto,295
+PLQ,Palanga,295
+MFE,McAllen,295
+YQR,Regina,296
+VXE,São Vicente,296
+AES,Ålesund,296
+TTU,Tétouan,297
+MFR,Medford,297
+ETH,Eilat,298
+MHD,Mashhad,298
+TAM,Tampico,298
+JOG,Yogyakarta,299
+PNA,Pamplona,299
+ESU,Essaouira,300
+TTN,Trenton,300
+KRS,Kristiansand,300
+CRA,Craiova,301
+XAP,Chapecó,301
+DAB,Daytona Beach,301
+FDH,Friedrichshafen,302
+EVE,Narvik,303
+SIA,Xi'an,304
+PEG,Perugia,305
+FCA,Kalispell,305
+DLC,Dalian,305
+RDM,Redmond,306
+JOI,Joinville,306
+EXT,Exeter,306
+MSO,Missoula,307
+ABE,Allentown,307
+CGP,Chittagong,307
+NKC,Nouakchott,308
+EAP,Basel,308
+LGP,Legazpi,309
+FOC,Fuzhou,309
+YZF,Yellowknife,310
+CJC,Calama,310
+LNZ,Linz,310
+IPC,Easter Island,311
+HHQ,Hua Hin District,311
+TRC,Torreón,311
+ATZ,Asyut,312
+ZCL,Zacatecas,312
+NOC,"Knock, County Mayo",312
+IQT,Iquitos,313
+TSN,Tianjin,313
+PMC,Puerto Montt,313
+RBR,"Rio Branco, Acre",314
+VIL,Dakhla,314
+GRJ,George,315
+TAP,Tapachula,315
+APW,Apia,315
+HTI,Hamilton Island,316
+NJF,Najaf,316
+BTH,Batam,317
+TPP,Tarapoto,318
+ZLO,Manzanillo,319
+NOS,Nosy Be,319
+DOM,Saint Andrew Parish,319
+MGQ,Mogadishu,320
+BZG,Bydgoszcz,320
+CPV,Campina Grande,320
+ASW,Aswan,321
+HPH,Haiphong,321
+KLU,Klagenfurt,322
+HVN,New Haven,322
+JAN,Jackson,322
+NTL,City of Newcastle,323
+PDV,Plovdiv,323
+SOQ,Sorong,323
+CAC,Cascavel,324
+IMP,Imperatriz,324
+ULN,Ulaanbaatar,324
+SCO,Aktau,325
+KCZ,Kochi,325
+BIL,Billings,326
+IXA,Agartala,326
+TRU,Trujillo,327
+ISP,Islip,327
+BNK,Ballina,327
+PPP,Proserpine,328
+RXS,"Roxas, Capiz",328
+FPO,Freeport,329
+AOJ,Aomori,329
+SMI,Samos,329
+TUF,Tours,330
+MAB,"Marabá, Pará",330
+ROA,Roanoke,331
+SBN,South Bend,331
+BTJ,Banda Aceh,332
+RAR,Rarotonga,332
+YXY,Whitehorse,332
+CGO,Zhengzhou,333
+CAY,Cayenne,333
+CIT,Shymkent,334
+SVD,Saint Vincent,334
+CCF,Carcassonne,334
+BTR,Baton Rouge,335
+IXD,Allahabad,335
+CRW,Charleston,336
+YQM,Moncton,337
+BOH,Bournemouth,337
+IOM,Douglas,337
+TLN,Toulon,338
+VLL,Valladolid,338
+DAM,Damascus,338
+CUE,Cuenca,339
+BXU,Butuan,339
+PSC,Pasco,340
+BZO,Bolzano,340
+CTM,Chetumal,340
+RCH,Riohacha,341
+JLR,Jabalpur,341
+FWA,Fort Wayne,341
+ATW,Appleton,342
+SLA,Salta,342
+NNG,Nanning,342
+HGA,Hargeisa,343
+IAG,Niagara Falls,343
+TGU,Tegucigalpa,344
+YQG,Windsor,344
+IXU,Aurangabad,345
+,Darbhanga,345
+CSX,Changsha,346
+CIX,Chiclayo,346
+BGR,Bangor,347
+VLI,Port Vila,347
+AGR,Agra,348
+FNT,Flint,348
+IMF,Imphal,349
+UNN,Ranong Province,350
+YXU,London,350
+GBE,Gaborone,350
+EGE,Vail,351
+TDX,Trat Province,351
+POM,Port Moresby,351
+LLW,Lilongwe,352
+LBE,Latrobe,352
+ASM,Asmara,353
+VFA,Victoria Falls,353
+GNV,Gainesville,353
+GPT,Gulfport,354
+PNT,Puerto Natales,354
+MJT,Mytilene,355
+SKB,Saint Kitts,355
+RAP,Rapid City,356
+IDA,Idaho Falls,356
+PAS,Parikia,357
+REX,Reynosa,357
+MRV,Mineralnye Vody,358
+OMR,Oradea,358
+VUP,Valledupar,359
+YKF,Waterloo,359
+MDC,Manado,359
+HOR,"Horta, Azores",360
+BSR,Basra,360
+QSF,Sétif,360
+SUV,Suva,361
+PVU,Provo,362
+SBH,Saint Barthélemy,362
+ASJ,Amami,363
+KMQ,Komatsu,363
+HUI,Hue,363
+HAS,Ha il,364
+ODS,Odessa,364
+ARK,Arusha,364
+OGU,Giresun,365
+ELS,East London,365
+ASP,Alice Springs,365
+RSU,Yeosu,366
+ANF,Antofagasta,366
+GOH,Nuuk,367
+SAF,Santa Fe,367
+OPS,"Sinop, Mato Grosso",368
+MQM,Mardin,368
+SYX,Sanya,368
+GJT,Grand Junction,369
+KNU,Kanpur,369
+FNI,Nîmes,369
+GMZ,San Sebastián de La Gomera,370
+SHV,Shreveport,370
+UGC,Urgench,371
+SOC,Surakarta,371
+IZO,Izumo,372
+HAK,Haikou,372
+CXB,Cox's Bazar,373
+JSA,Jaisalmer,373
+GGT,George Town,373
+DZA,Mamoudzou,374
+KIR,County Kerry,374
+CCP,Concepción,374
+YVA,Moroni,375
+GAY,Gaya,375
+SBP,San Luis Obispo,375
+AKX,Aktobe,377
+MKY,Mackay,377
+LBV,Libreville,377
+USN,Ulsan,378
+MAF,Midland,378
+TVC,Traverse City,379
+GUW,Atyrau,379
+HRB,Harbin,379
+BJM,Bujumbura,380
+MLI,Moline,380
+EGC,Bergerac,381
+OZZ,Ouarzazate,381
+HAU,Haugesund,381
+LET,"Leticia, Amazonas",382
+TBP,Tumbes,382
+WNZ,Wenzhou,382
+CGQ,Changchun,383
+MRY,Monterey,383
+FAY,Fayetteville,383
+KOS,Sihanoukville Province,384
+AYQ,Uluru,384
+CRP,Corpus Christi,384
+LMM,Los Mochis,385
+BFL,Bakersfield,385
+NSN,Nelson,386
+YQT,Thunder Bay,387
+JIB,Balbala,388
+DNZ,Denizli,388
+USA,Concord,389
+LBB,Lubbock,389
+TOL,Toledo,390
+HRL,Harlingen,391
+TNA,Jinan,391
+FLL,Fort Lauderdale,392
+CLY,"Calvi, Haute-Corse",392
+BHK,Bukhara,392
+SYZ,Shiraz,393
+DUD,Dunedin,393
+LFT,Lafayette,393
+YEI,Bursa,394
+CAP,Cap-Haïtien,394
+CND,Constanța,395
+TGM,Târgu Mureș,395
+DND,Dundee,395
+EZS,Elazığ,396
+HRK,Kharkiv,397
+OSR,Ostrava,397
+OKJ,Okayama,397
+PIA,Peoria,398
+IQQ,Iquique,398
+FEG,Fergana,398
+BLI,Bellingham,399
+HBX,Hubli,399
+GAN,Gan,400
+BUQ,Bulawayo,401
+CJA,Cajamarca,401
+KUA,Kuantan,402
+NVA,"Neiva, Huila",402
+DHM,Dharamshala,403
+TLM,Tlemcen,403
+NDJ,N Djamena,403
+JUL,Juliaca,404
+STS,Santa Rosa,404
+AAE,Annaba,405
+BIS,Bismarck,406
+YYG,Charlottetown,406
+TOV,Tortola,406
+LSC,La Serena,407
+OSD,Östersund,407
+SFG,Saint Martin (Island),408
+BME,Broome,408
+PHC,Port Harcourt,409
+PCL,Pucallpa,409
+IXG,Belgaum,409
+AVP,Wilkes-Barre,410
+VVC,Villavicencio,410
+ALF,Alta,410
+ZCO,Temuco,411
+ORH,Worcester,411
+OXB,Bissau,412
+ULH,Al-`Ula,412
+ROS,Rosario,413
+BZV,Brazzaville,414
+ROR,Koror,414
+MDL,Mandalay,414
+TYL,Talara,415
+BSO,Basco,416
+DSI,Destin,416
+MLW,Monrovia,417
+LRD,Laredo,417
+MYQ,Mysore,417
+EAM,Najran,418
+TRI,Bristol,419
+CEN,Ciudad Obregón,419
+JNB,Johannesburg,420
+BOC,"Bocas Town, Bocas del Toro",421
+SFT,Skellefteå,421
+KUH,Kushiro,422
+GCI,Saint Peter Port,422
+DLH,Duluth,422
+DIL,Dili,423
+JNX,Naxos,423
+LPT,Lampang Province,423
+JUB,Juba,424
+RJA,Rajahmundry,424
+KAO,Kuusamo,424
+BRO,Brownsville,425
+MLX,Malatya,425
+LNK,Lincoln,426
+MGM,Montgomery,426
+CUF,Cuneo,427
+YFC,Fredericton,427
+AMA,Amarillo,427
+CFB,Cabo Frio,428
+GWT,Westerland,428
+ONQ,Zonguldak,428
+SCE,State College,429
+NLD,Nuevo Laredo,429
+LTO,Loreto,429
+BMI,Bloomington,430
+TAB,Tobago,430
+FSZ,Shizuoka,431
+IPN,Ipatinga,431
+IXS,Silchar,431
+YXS,Prince George,432
+PNY,Pondicherry,432
+PKR,Pokhara,433
+DRO,Durango,434
+FRS,Flores,434
+GWL,Gwalior,434
+MTJ,Montrose,435
+RDP,Durgapur,435
+ARI,Arica,436
+YNB,Yanbu,437
+JKH,Chios,437
+YKA,Kamloops,438
+HHH,Hilton Head Island,438
+PDP,Punta del Este,439
+LIO,Puerto Limón,440
+VAA,Vaasa,440
+VLN,Valencia,441
+SLQ,Sleetmute,441
+TPQ,Tepic,442
+KKN,Kirkenes,442
+SZY,"Szymany, Szczytno County",443
+YUM,Yuma,443
+TCQ,Tacna,444
+SFA,Sfax,444
+SGU,St. George,444
+URA,Oral,445
+MMB,Memanbetsu,446
+JHM,Kapalua,446
+LAO,Laoag,447
+CPX,Culebra,447
+VII,Vinh,448
+ISK,Nashik,449
+JDF,Juiz de Fora,449
+DPL,Dipolog,449
+BFN,Bloemfontein,450
+VQS,Vieques,451
+IBR,Ibaraki,451
+NGB,Ningbo,452
+KSN,Kostanay,453
+VXO,Växjö,453
+UET,Quetta,454
+PET,Pelotas,454
+CLQ,Colima,455
+MKZ,Malacca City,456
+MAR,Maracaibo,456
+TUG,Tuguegarao,457
+VCA,Can Tho,458
+MYD,Malindi,458
+MZG,Magong,459
+ERZ,Erzurum,459
+TBU,Nukuʻalofa,459
+AOK,Karpathos,460
+ELH,North Eleuthera,461
+PIX,Pico Island,461
+OAJ,Jacksonville,462
+VDE,Valverde,462
+MOL,Molde,463
+SDQ,Santo Domingo,463
+PBG,Plattsburgh,464
+DAV,"David, Chiriquí",465
+GTF,Great Falls,466
+CBO,Cotabato City,466
+REK,Reykjavik,467
+JNU,Juneau,468
+ACV,Arcata,468
+KIS,Kisumu,468
+MOT,Minot,470
+AYP,Ayacucho,470
+EYP,Yopal,470
+TKG,Bandar Lampung,471
+MDQ,Mar del Plata,471
+ERI,Erie,472
+MZL,Manizales,472
+RST,Rochester,473
+VAS,Sivas,473
+GVR,Governador Valadares,474
+LBC,Lubeck,474
+MHH,Marsh Harbour,475
+UKA,Ukunda,475
+PEM,Puerto Maldonado,476
+AJF,Al Jawf Region,477
+MTT,Minatitlán,477
+HRI,Hambantota,478
+EVV,Evansville,478
+SRE,Sucre,479
+MEC,Manta,480
+UYU,Uyuni,481
+ILG,Wilmington,481
+AXA,Anguilla,482
+APO,Apartadó,483
+TUC,San Miguel de Tucumán,483
+KUM,"Yakushima, Kagoshima",484
+KUV,Gunsan,485
+ACK,Nantucket,485
+HGN,Mae Hong Son Province,486
+LBD,Khujand,487
+BBA,Balmaceda,487
+JGA,Jamnagar,488
+WNP,"Naga, Camarines Sur",488
+LKN,Leknes,488
+YDF,Deer Lake,489
+DMU,Dimapur,489
+EUN,Laayoune,490
+PAG,Pagadian,491
+SCY,San Cristóbal Island,491
+OZC,Ozamiz,492
+ELM,Elmira,492
+SFQ,Şanlıurfa,493
+YNT,Yantai,494
+SCK,Stockton,494
+MAM,Matamoros,496
+YQU,Grande Prairie,497
+YCD,Nanaimo,498
+SSG,Malabo,498
+UIH,Qui Nhơn,498
+UBA,Uberaba,499
+FLO,Florence,499
+KLH,Kolhapur,499
+NMA,Namangan,500
+CLV,Caldas Novas,500
+ADE,Aden,501
+UPN,Uruapan,501
+YQQ,Comox,502
+SVJ,Svolvær,502
+NLP,Nelspruit,503
+LVI,Livingstone,503
+RDD,Redding,504
+NPE,Napier,504
+ENU,Enugu,505
+JTC,Bauru,507
+BVE,Brive-la-Gaillarde,507
+XQP,Quepos,509
+HTS,Huntington,509
+MKK,Hoʻolehua,510
+IXY,Kandla,511
+YMM,Fort McMurray,511
+CYS,Cheyenne,511
+YXC,Cranbrook,512
+SPI,Springfield,512
+LNS,Lancaster,513
+CME,Ciudad del Carmen,515
+MLO,"Plaka, Milos",515
+YSJ,Saint John,517
+IBE,Ibagué,518
+RRG,Rodrigues,518
+WOL,City of Wollongong,519
+FBM,Lubumbashi,519
+KMS,Kumasi,520
+JJG,Jaguaruna,520
+LOH,Loja,521
+HLN,Helena,521
+KAN,Kano,521
+YMQ,Montreal,522
+CYZ,"Cauayan, Isabela",525
+BLZ,Blantyre,525
+HDS,"Hoedspruit, Limpopo",526
+YNJ,Yanji,527
+WKJ,Wakkanai,527
+VCS,Côn Sơn Island,528
+JAE,Jaén,529
+AIA,Alliance,529
+BMV,Buon Ma Thuot,530
+BDU,Andselv,531
+MQL,Mildura,532
+TBZ,Tabriz,532
+BWA,Siddharthanagar,533
+HVB,Hervey Bay,534
+TEX,Telluride,535
+GFK,Grand Forks,535
+TCR,Thoothukudi,536
+BLV,Belleville,536
+NQN,Neuquén,537
+OSI,Osijek,537
+PKZ,Pakse,538
+XNN,Xining,539
+TRG,Tauranga,539
+IPI,Ipiales,540
+TTJ,Tottori,541
+AUC,Arauca,541
+PQQ,Port Macquarie,541
+MAZ,Mayagüez,542
+CSG,Columbus,542
+GCN,Grand Canyon Village,544
+FLA,Florencia,545
+KDU,Skardu,545
+MVY,Martha's Vineyard,545
+MLG,Malang,546
+MUB,Maun,547
+TJA,Tarija,547
+EDL,Eldoret,548
+WGA,Wagga Wagga,548
+JRG,Jhārsuguda,549
+AGT,Ciudad del Este,551
+SUX,Sioux City,551
+SPR,San Pedro Town,551
+ILE,Killeen,552
+FUN,Funafuti,553
+YGJ,Yonago,556
+LEA,Exmouth,556
+RMA,Roma,556
+NLA,Ndola,557
+DOD,Dodoma,558
+TIP,Tripoli,559
+MBT,Masbate City,560
+ERC,Erzincan,560
+UIB,Quibdó,561
+SPD,Saidpur,562
+BWX,Banyuwangi,563
+WEH,Weihai,564
+HOT,Hot Springs,564
+ZAL,Valdivia,565
+VDH,Đồng Hới,565
+HIR,Honiara,566
+GEL,Santo Ângelo,566
+HLZ,Hamilton,567
+LAU,Lamu,567
+GLT,Gladstone,567
+CPO,Copiapó,568
+CKS,Parauapebas,568
+CZU,"Corozal, Sucre",568
+GDT,Cockburn Town,569
+ERH,Errachidia,569
+MHK,Manhattan,570
+YSB,Greater Sudbury,570
+OWB,Owensboro,572
+MBS,Saginaw,574
+DPO,Devonport,575
+JAU,Jauja,576
+TMU,Tambor,577
+BHI,Bahía Blanca,577
+MSL,Muscle Shoals,578
+GRI,Grand Island,578
+PSM,Portsmouth,579
+KSU,Kristiansund,579
+WJU,Wonju,580
+JSR,Jessore,580
+HHR,Hawthorne,581
+PPN,Popayán,582
+FTW,Fort Worth,583
+CNY,Moab,584
+BIM,Bimini,584
+MEA,Macaé,584
+HOF,Hofuf,586
+KEP,Nepalgunj,586
+MVF,Mossoro,587
+JUJ,San Salvador de Jujuy,588
+MMH,Mammoth Lakes,588
+SMX,Santa Maria,588
+JRH,Jorhat,589
+LUA,Lukla,590
+PUW,Pullman,590
+ABS,Abu Simbel,591
+AQI,Qaisumah,592
+YAM,Sault Ste. Marie,593
+YKS,Yakutsk,595
+WVB,Walvis Bay,595
+PUU,Puerto Asís,595
+GOM,Goma,596
+BNI,Benin City,596
+MGW,Morgantown,597
+TNO,Tamarindo,598
+LCE,La Ceiba,600
+BHE,Blenheim,600
+ROT,Rotorua,601
+COD,Cody,602
+EBJ,Esbjerg,603
+RUT,Rutland City,604
+ATM,Altamira,605
+SGD,Sønderborg,606
+HGR,Hagerstown,607
+SHM,Shirahama,607
+MAQ,Mae Sot District,608
+TCO,Tumaco,609
+KOI,Kirkwall,609
+HUU,Huánuco,610
+JPR,Ji-Paraná,612
+SVU,Savusavu,613
+BHU,Bhavnagar,614
+ROW,Roswell,616
+TBT,Tabatinga,616
+ZHA,Zhanjiang,617
+NKT,Şırnak,618
+TWB,Toowoomba,618
+MZR,Mazar-i-Sharif,619
+PHE,Port Hedland,619
+TUP,Tupelo,620
+SBD,San Bernardino,621
+MWZ,Mwanza,621
+IVC,Invercargill,622
+QOW,Owerri,623
+LAS,Las Vegas,624
+KTN,Ketchikan,624
+LNY,Lanai,625
+PDS,Piedras Negras,626
+HSA,Turkistan,626
+NUM,Neom,627
+YQX,Gander,627
+ART,Watertown,628
+RNN,Bornholm,628
+BEN,Benghazi,630
+GUC,Gunnison,630
+YIW,Yiwu,630
+CYP,Calbayog,631
+MKL,Jackson,631
+OTH,North Bend,632
+YTS,Timmins,632
+HJR,Khajuraho Group of Monuments,633
+MSJ,Misawa,634
+ORB,Örebro,635
+OAG,Orange,638
+RJH,Rajshahi,638
+AAN,Al Ain,639
+JBR,Jonesboro,641
+CMG,Corumbá,642
+PSS,Posadas,644
+GIL,Gilgit,644
+PTY,Panama City,645
+PKN,Pangkalan Bun,646
+TDD,Trinidad,646
+LAW,Lawton,647
+BIR,Biratnagar,648
+EPR,Esperance,649
+CGM,Camiguin,649
+ISA,Mount Isa,650
+ABB,Asaba,650
+VLD,Valdosta,651
+LDU,Lahad Datu,651
+REL,Trelew,653
+UAQ,San Juan,654
+LXS,Lemnos,656
+PZB,Pietermaritzburg,657
+HAC,Hachijō-jima,657
+PCR,Puerto Carreño,658
+BZL,Barisal,659
+BVH,Vilhena,660
+TML,Tamale,661
+BEW,Beira,662
+SYY,Stornoway,662
+SHW,Sharurah,662
+KVO,Kraljevo,663
+PMY,Puerto Madryn,663
+JIK,Icaria,664
+JIJ,Jijiga,665
+FUJ,Fukue Island,666
+XUZ,Xuzhou,669
+MIM,Merimbula,669
+BSC,Bahía Solano,673
+AIT,Aitutaki,678
+LWS,Lewiston,680
+SHD,Staunton,680
+TRW,Bairiki,681
+HRO,Harrison,682
+TBB,Tuy Hòa,683
+TMC,Tambolaka,683
+DRT,Del Rio,685
+NOB,Nosara,685
+PDA,"Inírida, Guainía",686
+EAU,Eau Claire,686
+JKR,Janakpur,689
+CEZ,Cortez,690
+CBQ,Calabar,692
+CAW,Campos dos Goytacazes,692
+TKD,Sekondi-Takoradi,693
+SRP,Stord,695
+VNX,Vilankulo,696
+TOD,Pulau Tioman,697
+YBG,Saguenay,698
+BHR,Bharatpur,698
+IPL,El Centro,699
+EJA,Barrancabermeja,700
+PTG,"Polokwane, Limpopo",700
+YKM,Yakima,701
+YGR,"Les Îles-de-la-Madeleine, Quebec",701
+BBK,Kasane,702
+VCL,Chu Lai,702
+GGR,Garoe,703
+XIC,Xichang,704
+LMN,Limbang,704
+FRO,Florø,705
+MWA,Marion,705
+MQN,Mo i Rana,706
+CKZ,Çanakkale,707
+AUG,Augusta,708
+UBS,Columbus,710
+SIT,Sitka,712
+TXF,Teixeira de Freitas,714
+TLU,Tolú,714
+IWD,Ironwood,716
+APL,Nampula,717
+EAT,Wenatchee,719
+VDO,Ha Long,719
+OAL,Cacoal,720
+MHQ,Mariehamn,721
+SOW,Show Low,723
+HOV,Volda,724
+STC,St. Cloud,727
+TRK,"Tarakan, North Kalimantan",727
+WCA,Castro,727
+GIS,Gisborne,729
+MCN,Macon,730
+MBL,Manistee,731
+XCH,Shire of Christmas Island,732
+TBN,Fort Leonard Wood,734
+CRM,"Catarman, Northern Samar",735
+RVD,"Rio Verde, Goiás",737
+CRD,Comodoro Rivadavia,738
+XSC,South Caicos,741
+SRI,Samarinda,745
+WDS,Shiyan,745
+ALW,Walla Walla,746
+EAR,Kearney,747
+MKG,Muskegon,747
+OER,Örnsköldsvik,748
+TJL,Três Lagoas,754
+CDR,Chadron,756
+PVA,Providencia Island,758
+HDF,Heringsdorf,759
+SYO,Shonai,762
+LBS,Labasa,763
+ADQ,Kodiak,763
+PTX,Pitalito,764
+TBH,Tablas Island,765
+UTN,Upington,765
+FSP,Saint-Pierre,766
+RES,Resistencia,767
+CNQ,Corrientes,767
+SMT,Sorriso,770
+WRE,Whangarei,770
+KKE,Kerikeri,772
+HDG,Handan,774
+YVO,Val-d Or,776
+OGS,Ogdensburg,776
+BND,Bandar Abbas,777
+MZV,Gunung Mulu National Park,778
+GHB,Governor's Harbour,779
+CYB,Cayman Brac,780
+SWQ,Sumbawa Besar,781
+MCE,Merced,782
+UIN,Quincy,784
+ENE,Ende,786
+ORU,Oruro,786
+WAE,Wadi ad-Dawasir,787
+MOF,Maumere,787
+NAO,Nanchong,788
+DDD,Kudahuvadhoo,789
+NVI,Navoiy,791
+RGL,Río Gallegos,793
+DRV,Dharavandhoo,794
+WMX,Wamena,796
+YXL,Sioux Lookout,798
+MKM,Mukah,798
+OSY,Namsos,800
+CCK,Home Island,802
+GLH,Greenville,803
+YYA,Yueyang,804
+LUQ,San Luis,806
+OXF,Oxford,806
+PIR,Pierre,814
+RDN,Redang,814
+MFA,Mafia Island,821
+BJR,Bahir Dar,821
+OCC,Puerto Francisco de Orellana,821
+NQU,Nuquí,822
+KGC,Kingscote,824
+MTS,Manzini,825
+LWB,Lewisburg,827
+DIR,Dire Dawa,827
+TLE,Toliara,828
+SIF,"Simara, Bara",829
+MCW,Mason City,829
+LGI,Deadman's Cay Settlement,831
+RRS,Røros,832
+SHS,Jingzhou,833
+SJC,San Jose,834
+MJN,Mahajanga,834
+TGT,Tanga,835
+SEU,Seronera,836
+ATY,Watertown,837
+YBL,Campbell River,838
+PJM,Puerto Jiménez,839
+HYA,Hyannis,840
+CLE,Cleveland,844
+GLN,Guelmim,844
+NBS,Baishan,845
+RYK,Rahim Yar Khan,846
+TWT,Tawi-Tawi,847
+RIH,Penonomé,850
+GDQ,Gondar,851
+FMA,Formosa,852
+MRZ,Moree,857
+ILR,Ilorin,859
+ENA,Kenai,860
+UII,Útila,863
+GNS,Gunungsitoli,864
+BDP,"Bhadrapur, Mechi",866
+EWB,New Bedford,869
+YYY,Mont-Joli,871
+SKZ,Sukkur,873
+HEA,Herat,874
+RAH,Rafha,876
+QUO,Uyo,878
+RAB,Rabaul,879
+ELD,El Dorado,881
+LMC,La Macarena,883
+OKE,Okinoerabujima,883
+HJJ,Huaihua,887
+CPD,Coober Pedy,888
+ILP,Isle of Pines,888
+VEL,Vernal,889
+FRW,Francistown,894
+PBO,Paraburdoo,894
+ZVK,Savannakhet,895
+RGI,Rangiroa,895
+PMA,Pemba Island,897
+NDG,Qiqihar,900
+HEH,Heho,900
+GJL,Jijel,902
+MXZ,Meizhou,902
+OKI,Oki Islands,905
+GYS,Guangyuan,906
+ZQZ,Zhangjiakou,906
+RVE,Saravena,911
+LYC,Lycksele,917
+CTL,Charleville,921
+KRF,Kramfors Municipality,923
+XIL,Xilinhot,923
+WAG,Whanganui,925
+WPU,Puerto Williams,926
+IZT,"Ixtepec, Oaxaca",928
+IBA,Ibadan,930
+YDA,Dawson City,930
+VKG,Rạch Giá,931
+VPG,Kikambala,933
+BHV,Bahawalpur,934
+VGZ,Villagarzón,935
+DRK,Bahía Drake,936
+EQS,Esquel,936
+YIN,Ghulja,938
+PVC,Provincetown,939
+LZN,"Nangan, Lienchiang",940
+AKR,Akure,942
+SQJ,Sanming,943
+EVG,Sveg,944
+VDM,Viedma,945
+CED,Ceduna,948
+NZH,Manzhouli,951
+HTN,Hotan,952
+WEF,Weifang,953
+CIJ,Cobija,954
+BKZ,Bukoba,956
+SET,Serra Talhada,956
+LAX,Los Angeles,957
+HOM,Homer,957
+YLL,Lloydminster,958
+CBH,Béchar,959
+HAA,Hasvik,960
+SMQ,Sampit,962
+HNS,Haines,966
+XKH,Phonsavan,968
+GTZ,Grumeti Game Reserve,968
+MJK,Monkey Mia,969
+LOK,Lodwar,970
+LSH,Lashio,973
+GLF,Golfito,975
+SVC,Silver City,979
+MVP,Mitú,981
+YIV,"Island Lake, Manitoba",982
+PZI,Panzhihua,987
+YAP,Yap,989
+QRW,Warri,990
+NAA,Narrabri,992
+WWK,Wewak,994
+PBR,Puerto Barrios,996
+LXG,Luang Namtha,1002
+PSG,Petersburg,1005
+DGA,Dangriga,1007
+VAW,Vardø,1009
+FAV,Fakarava,1017
+YKO,Hakkâri,1018
+KTR,Katherine,1018
+CNJ,Cloncurry,1019
+ARD,Alor Island,1021
+TIH,Tikehau,1022
+UNK,Unalakleet,1024
+HVR,Havre,1033
+YOL,Yola,1037
+TUK,Turbat,1043
+RCU,Río Cuarto,1052
+ISN,Williston,1053
+DUT,Dutch Harbor,1055
+YCB,Cambridge Bay,1056
+BUA,Buka Island,1061
+RER,Retalhuleu,1063
+UEL,Quelimane,1067
+BYC,Yacuíba,1069
+BEU,Bedourie,1076
+HKN,Hoskins,1076
+NAH,Naha,1077
+GTE,Groote Eylandt,1082
+GJA,Guanaja,1083
+UAS,Samburu County,1090
+AAZ,Quezaltenango,1095
+YGW,Kuujjuarapik,1095
+VAI,Vanimo,1096
+YVZ,Deer Lake,1097
+YGL,La Grande River,1097
+YAG,Fort Frances,1099
+MYT,Myitkyina,1102
+NYI,Sunyani,1108
+YSM,Fort Smith,1108
+WSZ,Westport,1110
+ODY,Muang Xay,1122
+YAB,Arctic Bay,1125
+YMO,Moosonee,1129
+CMA,Cunnamulla,1129
+IRI,Nduli,1137
+PEC,Pelican,1140
+GYU,Guyuan County,1144
+MMD,Minamidaito,1147
+YHO,Hopedale,1149
+BCI,Barcaldine,1151
+NTN,Normanton,1155
+OLP,Olympic Dam,1160
+VBV,Vanua Balavu,1168
+CYA,Les Cayes,1175
+SLH,Sola,1176
+VDZ,Valdez,1177
+YUD,Umiujaq,1180
+RUR,Rurutu,1183
+OIR,Okushiri,1184
+ABM,Bamaga,1188
+SSR,Sara,1189
+ZWL,Wollaston Lake,1194
+MSH,Masirah,1196
+YTQ,Tasiujaq,1197
+WSK,Wushan,1200
+MNG,Maningrida,1207
+YVM,Qikiqtarjuaq,1208
+SBR,Saibai Island,1210
+SZE,Semera,1212
+YFA,Fort Albany First Nation,1215
+YAK,Yakutat,1217
+WJR,Wajir,1219
+DLG,Dillingham,1222
+XKS,Kasabonika Lake First Nation,1225
+GZO,Gizo,1235
+DMD,Doomadgee,1239
+ANI,Aniak,1243
+OTI,Morotai,1247
+JCK,Julia Creek,1248
+KLW,Klawock,1251
+YFS,Fort Simpson,1253
+SZA,Soyo,1255
+BKQ,Blackall,1255
+YUX,Hall Beach,1258
+WZA,Wa,1260
+YTL,Kitchenuhmaykoosib Inninuwug First Nation,1271
+ORZ,Orange Walk District,1274
+KWM,Kowanyama,1277
+YGT,Igloolik,1280
+YWB,Kangiqsujuaq,1282
+ULP,Quilpie,1283
+WRG,Wrangell,1285
+ONG,Mornington Island,1287
+GMO,Gombe,1288
+BDD,Badu Island,1289
+RMT,Rimatara,1293
+NAM,Namlea-Buru Island,1307
+TMI,Tumlingtar,1308
+MYG,Mayaguana,1311
+MZA,Mazamari,1316
+ZLT,"La Tabatière, Quebec",1317
+TFI,Tufi,1325
+RVV,Raivavae,1331
+HNH,Hoonah,1334
+ZUM,Churchill Falls,1335
+RAQ,Raha,1336
+KUG,Moa Island,1338
+HOX,Homalin,1338
+RCM,Richmond,1339
+YXN,"Whale Cove, Nunavut",1347
+JNS,Narsaq,1348
+MNS,Mansa,1362
+SNP,St. Paul,1364
+LMU,Jemaja Island,1371
+AGN,Angoon,1379
+WNR,Windorah,1380
+MRE,Maasai Mara,1380
+MWQ,Magway,1382
+TOH,Torres Islands,1384
+NIU,Niau,1393
+XMH,Manihi,1398
+IRG,Lockhart River,1401
+JIA,Juína,1405
+ODN,Long Seridan,1411
+MCV,McArthur River zinc mine,1439
+MGT,Milingimbi Island,1441
+TKP,Takapoto,1448
+RRR,Raroia,1463
+RBB,Borba,1483
+NAU,Napuka,1484
+XTG,Thargomindah,1485
+UAH,Ua Huka,1494
+SWJ,South West Bay,1499
+MZW,Mecheria,1520
+TKV,Tatakoto,1538
+TMT,Oriximina,1551
+HTO,East Hampton,1552
+VHZ,Vahitahi,1555
+VCC,Vacaria,1570
+BRI,Bari,1571
+KXU,Katiu,1577
+LGG,Liège,1578
+XIQ,Ilimanaq,1582
+QHU,Husum,1634
