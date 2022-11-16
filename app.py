@@ -155,7 +155,7 @@ def explore_result(airport, d00, d01, d10, d11):
                               "return_time": r_dict['inbound_arrival_time'],
                               "price": o['outbound_price'] + r_dict['inbound_price'],
                               "airlines": list(set(o['outbound_airlines'] + r_dict['inbound_airlines'])),
-                              "link": "/".join(["/round", airport, r['cityCodeFrom'], d00, d01, d10, d11])
+                              "link": "/".join(["/round", airport, "city:" + r['cityCodeFrom'], d00, d01, d10, d11])
                               })
 
     trips = sorted(trips, key=lambda d: d['price'])
