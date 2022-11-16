@@ -21,12 +21,27 @@ def hello():
     if request.method == 'POST':
         print(request)
         print(request.form)
-        airport = request.form['autocomplete']
-        d00 = search.d00.data.strftime("%d-%m-%Y")
-        d01 = search.d01.data.strftime("%d-%m-%Y")
-        d10 = search.d10.data.strftime("%d-%m-%Y")
-        d11 = search.d11.data.strftime("%d-%m-%Y")
-        return redirect("/".join(["/explore", airport, d00, d01, d10, d11]))
+        url = "/"
+
+        if request.form['search'] == "explore":
+            d00, d01 = dep_dates = request.form['date_dep'].split(" - ")
+            d10, d11 = ret_dates = request.form['date_ret'].split(" - ")
+            origin = request.form['origin']
+            url = "/".join(["/explore", origin, d00, d01, d10, d11])
+        elif request.form['search'] == "round":
+            d00, d01 = dep_dates = request.form['date_dep'].split(" - ")
+            d10, d11 = ret_dates = request.form['date_ret'].split(" - ")
+            origin = request.form['origin']
+            destination = request.form['destination']
+            url = "/".join(["/round", origin, destination, d00, d01, d10, d11])
+        elif request.form['search'] == "oneway":
+            pass
+        elif request.form['search'] == "multi":
+            pass
+        else:
+            pass
+        #return redirect("/".join(["/explore", airport, d00, d01, d10, d11]))
+        return redirect(url)
     else:
         # airports_csv = csv.reader(open("airports.csv", "r"), delimiter=",")
         # 0. Code
@@ -42,6 +57,13 @@ def hello():
         # 10. County
         # 11. State
 
+        next_thu = datetime.date.today() + datetime.timedelta(days=(21 + (3 - datetime.date.today().weekday()) % 7))
+        default_dates = [next_thu.strftime("%d-%m-%Y"),
+                         (next_thu + datetime.timedelta(days=1)).strftime("%d-%m-%Y"),
+                         (next_thu + datetime.timedelta(days=2)).strftime("%d-%m-%Y"),
+                         (next_thu + datetime.timedelta(days=3)).strftime("%d-%m-%Y")]
+
+        print(default_dates)
         cities_csv = csv.reader(open("cities.csv"), delimiter=",")
 
         searchTextList = []
@@ -50,7 +72,7 @@ def hello():
 
         for row in cities_csv:
             searchTextList.append([row[1] + " - " + row[0], row[0]])
-        return render_template("start.html", form=search, cities=searchTextList[1:])
+        return render_template("start.html", form=search, cities=searchTextList[1:], default_dates=default_dates)
 
 
 @app.route("/explore/<airport>/<d00>/<d01>/<d10>/<d11>")

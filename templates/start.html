@@ -14,64 +14,37 @@
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-select@1.14.0-beta3/dist/css/bootstrap-select.min.css">
 </head>
 
-<body class="d-flex h-100 text-center !Ttext-bg-dark">
-<div class="cover-container d-flex w-100 h-100 p-3 mx-auto flex-column align-items-center justify-content-center">
-    <h3 class="float-md-start mb-0">Ready for your next adventure?</h3>
-    <div class="card" style="width: fit-content;">
+<body>
+<div class="d-flex flex-column min-vh-100 mx-auto justify-content-center align-items-center">
+
+    <div class="mb-5 mx-auto text-center">
+        <h1>Ready for your next adventure?</h1>
+        Welcome to the internet's most flexible travel search engine.
+    </div>
+    <div class="card mx-auto text-center" style="width: fit-content;">
         <div class="card-body">
             <ul class="nav nav-pills mb-3" id="pills-tab" role="tablist">
                 <li class="nav-item" role="presentation">
-                    <button class="nav-link active" id="pills-oneway-tab" data-bs-toggle="pill" data-bs-target="#pills-oneway" type="button" role="tab" aria-controls="pills-oneway" aria-selected="true">One-way</button>
+                    <button class="nav-link disabled" id="pills-oneway-tab" data-bs-toggle="pill" data-bs-target="#pills-oneway" type="button" role="tab" aria-controls="pills-oneway" aria-selected="false">One-way</button>
                 </li>
                 <li class="nav-item" role="presentation">
-                    <button class="nav-link" id="pills-roundtrip-tab" data-bs-toggle="pill" data-bs-target="#pills-roundtrip" type="button" role="tab" aria-controls="pills-roundtrip" aria-selected="false">Round trip</button>
+                    <button class="nav-link active" id="pills-roundtrip-tab" data-bs-toggle="pill" data-bs-target="#pills-roundtrip" type="button" role="tab" aria-controls="pills-roundtrip" aria-selected="true">Round trip</button>
                 </li>
                 <li class="nav-item" role="presentation">
                     <button class="nav-link" id="pills-explore-tab" data-bs-toggle="pill" data-bs-target="#pills-explore" type="button" role="tab" aria-controls="pills-explore" aria-selected="false">Explore</button>
                 </li>
                 <li class="nav-item" role="presentation">
-                    <button class="nav-link" id="pills-multicity-tab" data-bs-toggle="pill" data-bs-target="#pills-multicity" type="button" role="tab" aria-controls="pills-multicity" aria-selected="false">Multi-city</button>
+                    <button class="nav-link disabled" id="pills-multicity-tab" data-bs-toggle="pill" data-bs-target="#pills-multicity" type="button" role="tab" aria-controls="pills-multicity" aria-selected="false">Multi-city</button>
                 </li>
             </ul>
             <div class="tab-content" id="pills-tabContent">
-                <div class="tab-pane fade show active" id="pills-oneway" role="tabpanel" aria-labelledby="pills-oneway-tab" tabindex="0">
-                    <form method="post">
-                        <p>
-                            {% include "origin_airport_select.html" %}
-                        </p>
-                        <p>
-                            {% include "destination_airport_select.html" %}
-                        </p>
-
-                        <p><div class="row">
-                        <div class="col">
-                            {% include "departure_date_control.html" %}
-                        </div>
-                        <div class="col">
-                            <!--{% include "return_date_control.html" %}-->
-                        </div>
-                    </div></p>
-
-                        <p><div class="row">
-                        <div class="col">
-                            <input type="text" class="form-control" placeholder="A" aria-label="departure" style="width: 2rem;">
-                        </div>
-                        <div class="col">
-                            <input type="text" class="form-control" placeholder="C" aria-label="return">
-                        </div>
-                        <div class="col">
-                            <button class="btn btn-primary" type="submit">
-                                <i class="bi bi-search"></i>
-                            </button>
-                        </div>
-                    </div></p>
-                    </form>
+                <div class="tab-pane fade" id="pills-oneway" role="tabpanel" aria-labelledby="pills-oneway-tab" tabindex="0">
                 </div>
-                <div class="tab-pane fade" id="pills-roundtrip" role="tabpanel" aria-labelledby="pills-roundtrip-tab" tabindex="0">
-                    Round trip
+                <div class="tab-pane fade show active" id="pills-roundtrip" role="tabpanel" aria-labelledby="pills-roundtrip-tab" tabindex="0">
+                    {% include "form_round.html" %}
                 </div>
                 <div class="tab-pane fade" id="pills-explore" role="tabpanel" aria-labelledby="pills-explore-tab" tabindex="0">
-                    Explore
+                    {% include "form_explore.html" %}
                 </div>
                 <div class="tab-pane fade" id="pills-multicity" role="tabpanel" aria-labelledby="pills-multicity-tab" tabindex="0">
                     Multi-city
@@ -79,6 +52,7 @@
             </div>
         </div>
     </div>
+
 </div>
 
 <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-OERcA2EqjJCMA+/3y+gxIOqMEjwtxJY7qPCqsdltbNJuaOe923+mo//f6V8Qbsw3" crossorigin="anonymous"></script>
@@ -86,4 +60,27 @@
 
 <!-- bootstrap-select -->
 <script src="https://cdn.jsdelivr.net/npm/bootstrap-select@1.14.0-beta3/dist/js/bootstrap-select.min.js"></script>
+
+<!-- date range picker -->
+<script type="text/javascript" src="https://cdn.jsdelivr.net/jquery/latest/jquery.min.js"></script>
+<script type="text/javascript" src="https://cdn.jsdelivr.net/momentjs/latest/moment.min.js"></script>
+<script type="text/javascript" src="https://cdn.jsdelivr.net/npm/daterangepicker/daterangepicker.min.js"></script>
+<link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/npm/daterangepicker/daterangepicker.css" />
+<script type="text/javascript">
+$(function() {
+
+  $('input[name="date_dep"]').daterangepicker({
+    locale: {
+      format: "DD-MM-YYYY"
+    }
+  });
+
+  $('input[name="date_ret"]').daterangepicker({
+    locale: {
+      format: "DD-MM-YYYY"
+    }
+  });
+
+
+});</script>
 </body>

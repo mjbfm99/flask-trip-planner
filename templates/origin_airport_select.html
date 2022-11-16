@@ -1,6 +1,6 @@
                             <select class="selectpicker" data-size="5" data-live-search="true" multiple title="Leaving from..." multiple style="" id="origin" name="origin">
                                 {% for item in cities %}
-                                <option value="city:{{ item[1] }}" data-tokens="{{ item[1] }}" data-content='
+                                <option title="{{ item[0] }}" value="city:{{ item[1] }}" data-tokens="{{ item[1] }}" data-content='
                                     <i class="bi-buildings-fill lm-2"></i>
                                     {{ item[0] }}
                                 '></option>
