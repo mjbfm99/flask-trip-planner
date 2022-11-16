@@ -28,10 +28,10 @@
                     <button class="nav-link disabled" id="pills-oneway-tab" data-bs-toggle="pill" data-bs-target="#pills-oneway" type="button" role="tab" aria-controls="pills-oneway" aria-selected="false">One-way</button>
                 </li>
                 <li class="nav-item" role="presentation">
-                    <button class="nav-link active" id="pills-roundtrip-tab" data-bs-toggle="pill" data-bs-target="#pills-roundtrip" type="button" role="tab" aria-controls="pills-roundtrip" aria-selected="true">Round trip</button>
+                    <button class="nav-link" id="pills-roundtrip-tab" data-bs-toggle="pill" data-bs-target="#pills-roundtrip" type="button" role="tab" aria-controls="pills-roundtrip" aria-selected="false">Round trip</button>
                 </li>
                 <li class="nav-item" role="presentation">
-                    <button class="nav-link" id="pills-explore-tab" data-bs-toggle="pill" data-bs-target="#pills-explore" type="button" role="tab" aria-controls="pills-explore" aria-selected="false">Explore</button>
+                    <button class="nav-link active" id="pills-explore-tab" data-bs-toggle="pill" data-bs-target="#pills-explore" type="button" role="tab" aria-controls="pills-explore" aria-selected="true">Explore</button>
                 </li>
                 <li class="nav-item" role="presentation">
                     <button class="nav-link disabled" id="pills-multicity-tab" data-bs-toggle="pill" data-bs-target="#pills-multicity" type="button" role="tab" aria-controls="pills-multicity" aria-selected="false">Multi-city</button>
@@ -40,10 +40,10 @@
             <div class="tab-content" id="pills-tabContent">
                 <div class="tab-pane fade" id="pills-oneway" role="tabpanel" aria-labelledby="pills-oneway-tab" tabindex="0">
                 </div>
-                <div class="tab-pane fade show active" id="pills-roundtrip" role="tabpanel" aria-labelledby="pills-roundtrip-tab" tabindex="0">
+                <div class="tab-pane fade" id="pills-roundtrip" role="tabpanel" aria-labelledby="pills-roundtrip-tab" tabindex="0">
                     {% include "form_round.html" %}
                 </div>
-                <div class="tab-pane fade" id="pills-explore" role="tabpanel" aria-labelledby="pills-explore-tab" tabindex="0">
+                <div class="tab-pane fade show active" id="pills-explore" role="tabpanel" aria-labelledby="pills-explore-tab" tabindex="0">
                     {% include "form_explore.html" %}
                 </div>
                 <div class="tab-pane fade" id="pills-multicity" role="tabpanel" aria-labelledby="pills-multicity-tab" tabindex="0">
