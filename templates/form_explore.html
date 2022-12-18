@@ -1,33 +1,55 @@
-                    <form method="post">
-                        <div class="row">
-                            <div class="col">
-                                {% include "origin_airport_select.html" %}
-                            </div>
-                        </div>
+<form method="post">
+    <div class="row">
+        <div class="col">
+            {% include "origin_airport_select.html" %}
+        </div>
+    </div>
 
-                        <div class="row mt-3">
-                            <div class="col">
-                                <input type="text" class="form-control" name="date_dep" value="{{ default_dates[0] }} - {{ default_dates[1] }}"/>
-                            </div>
-                            <div class="col">
-                                <input type="text" class="form-control" name="date_ret" value="{{ default_dates[2] }} - {{ default_dates[3] }}"/>
-                            </div>
-                        </div>
+    <div class="row mt-3">
+        <div class="col">
+            <div class="form-floating">
+                <input type="date" class="form-control" name="date0" value="{{ default_dates[0] }}">
+                <label for="date0">Earliest departure</label>
+            </div>
 
-                        <div class="form-text" style="width: fit-content">You can set date ranges for both the departure and return.</div>
+        </div>
+        <div class="col">
+            <div class="form-floating">
+                <input type="date" class="form-control" name="date1" value="{{ default_dates[3] }}"/>
+                <label for="date1">Latest return</label>
+            </div>
+        </div>
+    </div>
+
+    <!--<div class="form-text" style="width: fit-content">You can set date ranges for both the departure and return.</div>-->
+
+    <div class="row mt-3">
+        <div class="col">
+            <div class="form-floating">
+                <input type="number" class="form-control" name="days0" value="3">
+                <label for="days0">Min. days at destination</label>
+            </div>
+        </div>
+        <div class="col">
+            <div class="form-floating">
+                <input type="number" class="form-control" name="days1" value="5">
+                <label for="days1">Max. days at destination</label>
+            </div>
+        </div>
+    </div>
 
 
-                        <div class="row mt-3">
-                            <!--<div class="col">
-                                <input type="text" class="form-control" placeholder="A" aria-label="departure" style="width: 3rem;">
-                            </div>
-                            <div class="col">
-                                <input type="text" class="form-control" placeholder="C" aria-label="return">
-                            </div>-->
-                            <div class="col">
-                                <button class="btn btn-primary" type="submit" name="search" value="explore">
-                                    <i class="bi bi-search"></i>
-                                </button>
-                            </div>
-                        </div>
-                    </form>
+    <div class="row mt-3">
+        <!--<div class="col">
+            <input type="text" class="form-control" placeholder="A" aria-label="departure" style="width: 3rem;">
+        </div>
+        <div class="col">
+            <input type="text" class="form-control" placeholder="C" aria-label="return">
+        </div>-->
+        <div class="col">
+            <button class="btn btn-primary" type="submit" name="search" value="explore">
+                <i class="bi bi-search"></i>
+            </button>
+        </div>
+    </div>
+</form>

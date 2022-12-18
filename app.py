@@ -6,9 +6,9 @@ import requests
 import json
 import datetime
 import forms
-from flask import Flask, render_template, request, redirect
+from flask import Flask, render_template, request, redirect, url_for
 import csv
-
+import base64
 
 app = Flask(__name__, template_folder='./templates', static_folder='./static')
 flask_bootstrap.Bootstrap5(app)
@@ -19,21 +19,28 @@ kiwi_key = os.environ['KIWI_API_KEY']
 def hello():
     search = forms.AirportForm(request.form)
     if request.method == 'POST':
-        print(request)
-        print(request.form)
         url = "/"
+        print(request.form)
 
         if request.form['search'] == "explore":
-            d00, d01 = dep_dates = request.form['date_dep'].split(" - ")
-            d10, d11 = ret_dates = request.form['date_ret'].split(" - ")
+            date_from = request.form['date0']
+            date_to = request.form['date1']
             origin = request.form['origin']
-            url = "/".join(["/explore", origin, d00, d01, d10, d11])
+            nights_from = request.form['days0']
+            nights_to = request.form['days1']
+            search_id = base64.b64encode(str([origin, date_from, date_to, nights_from, nights_to]).encode("ascii")).decode("utf-8").replace("=", "")
+            url = "/".join(["/explore", search_id])
+
         elif request.form['search'] == "round":
-            d00, d01 = dep_dates = request.form['date_dep'].split(" - ")
-            d10, d11 = ret_dates = request.form['date_ret'].split(" - ")
+            date_from = request.form['date0']
+            date_to = request.form['date1']
             origin = request.form['origin']
             destination = request.form['destination']
-            url = "/".join(["/round", origin, destination, d00, d01, d10, d11])
+            nights_from = request.form['days0']
+            nights_to = request.form['days1']
+            search_id = base64.b64encode(str([origin, destination, date_from, date_to, nights_from, nights_to]).encode("ascii")).decode("utf-8").replace("=", "")
+            url = "/".join(["/round", search_id])
+
         elif request.form['search'] == "oneway":
             pass
         elif request.form['search'] == "multi":
@@ -58,12 +65,11 @@ def hello():
         # 11. State
 
         next_thu = datetime.date.today() + datetime.timedelta(days=(21 + (3 - datetime.date.today().weekday()) % 7))
-        default_dates = [next_thu.strftime("%d-%m-%Y"),
-                         (next_thu + datetime.timedelta(days=1)).strftime("%d-%m-%Y"),
-                         (next_thu + datetime.timedelta(days=2)).strftime("%d-%m-%Y"),
-                         (next_thu + datetime.timedelta(days=3)).strftime("%d-%m-%Y")]
+        default_dates = [next_thu.strftime("%Y-%m-%d"),
+                         (next_thu + datetime.timedelta(days=1)).strftime("%Y-%m-%d"),
+                         (next_thu + datetime.timedelta(days=2)).strftime("%Y-%m-%d"),
+                         (next_thu + datetime.timedelta(days=3)).strftime("%Y-%m-%d")]
 
-        print(default_dates)
         cities_csv = csv.reader(open("cities.csv"), delimiter=",")
 
         searchTextList = []
@@ -75,105 +81,45 @@ def hello():
         return render_template("start.html", form=search, cities=searchTextList[1:], default_dates=default_dates)
 
 
-@app.route("/explore/<airport>/<d00>/<d01>/<d10>/<d11>")
-def explore_result(airport, d00, d01, d10, d11):
+@app.route("/explore/<search_id>")
+def explore_result(search_id):
+
+    params = base64.b64decode(search_id + '=' * (-len(search_id) % 4)).decode("utf-8")[1:-1].replace("'", "").split(", ")
+
+    [airport, date_from, date_to, nights_from, nights_to] = params
+    return_from = date_from
+    return_to = date_to
+
     url = "https://api.tequila.kiwi.com/v2/search"
-
-    date_from = d00.replace("-", "/")
-    date_to = d01.replace("-", "/")
-    return_from = d10.replace("-", "/")
-    return_to = d11.replace("-", "/")
-    #airport = "MAD"
-
-    # Approach
-    #
-    # 1. Search for flights to anywhere (one per city)
-    # 2. Take the cities in the response
-    # 3. Search for one return flight per city
-    # 4. Match them and show list
-    #
-    # 5. Each city on the list will be clickable. After clicking a city, a new query will be made.
-
-    # Outbound cities search (1000 cheapest flights)
-
     headers = {'Content-Type': 'application/json; charset=utf/8', 'apikey': kiwi_key}
-    params = {'fly_from': airport, 'date_from': date_from, 'date_to': date_to, 'flight_type': 'oneway',
-              'one_per_city': '1', 'limit': '500'}
+    params = {'fly_from': airport, 'date_from': date_from, 'date_to': date_to, 'flight_type': 'round',
+              'return_from': return_from, 'return_to': return_to, 'one_for_city': '1', 'ret_from_diff_city': '0',
+              'sort': 'price', 'nights_in_dst_from': nights_from, 'nights_in_dst_to': nights_to, 'limit': '100'}
 
     response = json.loads(requests.get(url, headers=headers, params=params).text)
-    #print(response)
 
-
-    # Get list of cities
-    cities = []
-
-    # Store first result for each city only
-    outbound_results = []
-    for r in response['data']:
-        if "city:" + r['cityCodeTo'] not in cities:
-            cities.append("city:" + r['cityCodeTo'])
-            outbound_results.append({"outbound_airport": r['flyTo'],
-                                     "city": r['cityTo'],
-                                     "outbound_departure_time": datetime.datetime.strptime(
-                                         r['route'][0]['local_departure'],
-                                         "%Y-%m-%dT%H:%M:%S.%fZ"),
-                                     # "lastArrivalTime": datetime.datetime.strptime(r['route'][-1]['local_arrival'],
-                                     #                                              "%Y-%m-%dT%H:%M:%S.%fZ"),
-                                     "outbound_price": round(r['price'], 2),
-                                     "outbound_airlines": r['airlines'],
-                                     "outbound_link": r['deep_link']})
-
-    # Get return flights
-    cities_str = ','.join(cities)
-
-    params = {'fly_from': cities_str, 'fly_to': airport, 'date_from': return_from, 'date_to': return_to,
-              'flight_type': 'oneway',
-              'one_per_city': '1', 'limit': '1000'}
-    response = json.loads(requests.get(url, headers=headers, params=params).text)
-
-    inbound_results = []
-    dest_airports = []
     trips = []
-    for r in response['data']:
-        if r['flyFrom'] not in dest_airports and "city:" + r['cityCodeFrom'] in cities:
-            dest_airports.append(r['flyFrom'])
-            r_dict = dict(inbound_airport=r['flyFrom'], city=r['cityFrom'],
-                          inbound_arrival_time=datetime.datetime.strptime(
-                              r['route'][-1]['local_arrival'],
-                              "%Y-%m-%dT%H:%M:%S.%fZ"), inbound_price=round(r['price'], 2),
-                          inbound_airlines=r['airlines'], inbound_link=r['deep_link'])
-            inbound_results.append(r_dict)
-            bp = next((item for item in inbound_results if
-                       (item['city'] == r['cityFrom'] and item['inbound_price'] < r['price'])), None)
-            if bp is None:
-                o = next(item for item in outbound_results if item['city'] == r['cityFrom'])
-                trips.append({"airport": str({r_dict['inbound_airport'], o['outbound_airport']}).replace("{",
-                                                                                                         "").replace(
-                    "}", "").replace("'", ""),
-                              "city": r_dict['city'],
-                              "departure_time": o['outbound_departure_time'],
-                              "return_time": r_dict['inbound_arrival_time'],
-                              "price": o['outbound_price'] + r_dict['inbound_price'],
-                              "airlines": list(set(o['outbound_airlines'] + r_dict['inbound_airlines'])),
-                              "link": "/".join(["/round", airport, "city:" + r['cityCodeFrom'], d00, d01, d10, d11])
-                              })
 
-    trips = sorted(trips, key=lambda d: d['price'])
+    for r in response['data']:
+        trips.append({"city": r['cityTo'],
+                      "price": r['price'],
+                      "link": "/".join(["/round", base64.b64encode(str([airport, "city:" + r['cityCodeTo'], date_from, date_to, nights_from, nights_to]).encode("ascii")).decode("utf-8").replace("=", "")])})
 
     return render_template("show_explore.html", data=trips, airport=airport)
 
 
-@app.route("/round/<origin>/<destination>/<d00>/<d01>/<d10>/<d11>")
-def round_result(origin, destination, d00, d01, d10, d11):
-    date_from = d00.replace("-", "/")
-    date_to = d01.replace("-", "/")
-    return_from = d10.replace("-", "/")
-    return_to = d11.replace("-", "/")
+@app.route("/round/<search_id>")
+def round_result(search_id):
+    params = base64.b64decode(search_id + '=' * (-len(search_id) % 4)).decode("utf-8")[1:-1].replace("'", "").split(", ")
+
+    [origin, destination, date_from, date_to, nights_from, nights_to] = params
+    return_from = date_from
+    return_to = date_to
 
     headers = {'Content-Type': 'application/json; charset=utf/8', 'apikey': kiwi_key}
     params = {'fly_from': origin, 'fly_to': destination, 'date_from': date_from, 'date_to': date_to,
               'return_from': return_from, 'return_to': return_to, 'flight_type': 'round',
-              'limit': '100'}
+              'limit': '100', 'nights_in_dst_from': nights_from, 'nights_in_dst_to': nights_to}
 
     url = "https://api.tequila.kiwi.com/v2/search"
     response = json.loads(requests.get(url, headers=headers, params=params).text)
